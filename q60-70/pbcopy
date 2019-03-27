@@ -1,0 +1,30 @@
+package main
+
+import "fmt"
+
+func main() {
+	fmt.Println(uniquePaths(51, 9))
+}
+func uniquePaths(m int, n int) int {
+	return uniquePathHelper(m-1, n-1, createMatric(m, n))
+}
+func uniquePathHelper(m int, n int, memo [][]int) int {
+	if m < 0 || n < 0 {
+		return 0
+	} else if m == 0 || n == 0 {
+		return 1
+	} else if memo[m][n] > 0 {
+		return memo[m][n]
+	} else {
+		memo[m][n] = uniquePathHelper(m-1, n, memo) + uniquePathHelper(m, n-1, memo)
+		return memo[m][n]
+	}
+}
+
+func createMatric(m int, n int) [][]int {
+	matric := make([][]int, m)
+	for i := range matric {
+		matric[i] = make([]int, n)
+	}
+	return matric
+}
