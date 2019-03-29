@@ -34,7 +34,6 @@ public class Solution {
         }
     }
 
-
     private String topologicalSort(Map<Character, Set<Character>> graph, int[] inDegree) {
         Queue<Character> queue = new LinkedList<>();
         for (char c : graph.keySet()) {
