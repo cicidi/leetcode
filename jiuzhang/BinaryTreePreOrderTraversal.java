@@ -1,15 +1,17 @@
+import java.util.ArrayList;
+
 public class Solution{
 
 	public ArrayList<Integer> preorderTraversal (TreeNode node){
 		ArrayList<Integer> result=new ArrayList<Integer>();
 		traversal(node, result);
 		return result;
-	}	
+	}
 
 	public void traversal (TreeNode root, ArrayList<Integer> result){
-	
+
 		if (root==null){
-			return; 
+			return;
 		} else{
 			result.add (root.value);
 			traversal(root.left, result);
@@ -29,14 +31,14 @@ public class Solution {
 		// 而且 如果是null 的话就报错了
 		ArrayList<Integer> result = new ArrayList<>();
 		if (root == null ){
-			return result; 
+			return result;
 		}else{
-			ArrayList<Integer> left= traversal(root.left); 
-			ArrayList<Integer> right= traversal(root.right); 
+			ArrayList<Integer> left= traversal(root.left);
+			ArrayList<Integer> right= traversal(root.right);
 			result.add(root.value);
 		       	result.addAll(left);
 			result.addAll(right);
-		
+
 			return result;
 
 		}
