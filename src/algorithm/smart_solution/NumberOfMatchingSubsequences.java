@@ -4,7 +4,7 @@ package algorithm.smart_solution;
 * tag
 * leetcode:792. Number of Matching Subsequences
 * */
-public class Number_of_matching_subsequences {
+public class NumberOfMatchingSubsequences {
 
     // Returns count of subsequences of the form 
     // a^i b^j c^k 
