@@ -1,8 +1,11 @@
 package algorithm.easy;
 
-/**
- * @author cicidi on 5/11/19
- */
+/*
+  * tag
+  * lintcode
+  * leetcode
+  * url
+  */
 public class BinaryToNumber {
 
     public static void main(String[] args) {

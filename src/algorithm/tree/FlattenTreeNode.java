@@ -2,7 +2,12 @@ package algorithm.tree;
 
 import algorithm.model.TreeNode;
 
-// leetcode 114
+/*
+  * tag
+  * lintcode
+  * leetcode 114. Flatten Binary Tree to Linked List
+  * url https://leetcode.com/problems/flatten-binary-tree-to-linked-list/
+  */
 public class FlattenTreeNode {
     private TreeNode dummy = null;
 

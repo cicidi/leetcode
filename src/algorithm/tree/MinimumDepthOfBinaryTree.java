@@ -1,7 +1,12 @@
-package dfs;
+package algorithm.tree;
 
-import model.TreeNode;
+import algorithm.model.TreeNode;
 
+/*
+  * tag
+  * lintcode 300. Longest Increasing Subsequence
+  * https://leetcode.com/problems/longest-increasing-subsequence/
+  */
 public class MinimumDepthOfBinaryTree {
 
     public static void main(String[] args) {

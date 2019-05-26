@@ -1,11 +1,20 @@
+package algorithm.linkedlist;
+
+import algorithm.model.ListNode;
+
+/*
+  * tag
+  * lintcode
+  * leetcode 141. Linked List Cycle
+  * url https://leetcode.com/problems/linked-list-cycle/
+  */
 public class LinkedListCycle {
 
 
+    public boolean hasCycle(ListNode head) {
 
-	public boolean hasCycle(ListNode head){
-	
 /*	
-		if (head == null ) return null 	
+        if (head == null ) return null
 		ListNode slow= head;
 		ListNode fast= head;
 
@@ -25,19 +34,19 @@ public class LinkedListCycle {
 
 */
 
-		if (head ==null && head.next==null) return null
+        if (head == null && head.next == null) return false;
 
-		//这个地方得是head.next   = = !  
-		ListNode fast=head.next;
-		ListNode slow=head;	
-		while (slow!=fast){
-			if(slow==null||fast==null||fast.next==null){
-				return false;
-			}
-			slow=slow.next;
-			fast=fast.next.next;
-		
-		}
-		return true;
-	}
+        //这个地方得是head.next   = = !
+        ListNode fast = head.next;
+        ListNode slow = head;
+        while (slow != fast) {
+            if (slow == null || fast == null || fast.next == null) {
+                return false;
+            }
+            slow = slow.next;
+            fast = fast.next.next;
+
+        }
+        return true;
+    }
 }

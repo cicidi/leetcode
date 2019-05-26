@@ -1,5 +1,11 @@
 package algorithm.dp;
 
+/*
+  * tag
+  * lintcode 76. Longest Increasing Subsequence
+  * url https://www.lintcode.com/problem/longest-increasing-subsequence/my-submissions
+  * url
+  */
 public class LongestIncreasingSubsequence {
 
     public int LongestIncreasingSubsequence(int[] nums) {

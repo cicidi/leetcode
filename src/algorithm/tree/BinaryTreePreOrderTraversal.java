@@ -1,12 +1,14 @@
 package algorithm.tree;
 
-import model.TreeNode;
 
-import java.util.*;
+import algorithm.model.TreeNode;
+
+import java.util.ArrayList;
+import java.util.List;
 /*
   * tag
-  * lintcode 300. Longest Increasing Subsequence
-  * https://leetcode.com/problems/longest-increasing-subsequence/
+  * lintcode 144. Binary Tree Preorder Traversal
+  * https://leetcode.com/problems/binary-tree-preorder-traversal/
   */
 
 public class BinaryTreePreOrderTraversal {

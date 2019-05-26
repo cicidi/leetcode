@@ -2,7 +2,12 @@ package algorithm.tree;
 
 import algorithm.model.TreeNode;
 
-public class LCA {
+/*
+  * tag
+  * leetcode 236. Lowest Common Ancestor of a Binary Tree
+  * https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/
+  */
+public class LowestCommonAncestor {
 
     public TreeNode getLCA(TreeNode root, TreeNode A, TreeNode B) {
 

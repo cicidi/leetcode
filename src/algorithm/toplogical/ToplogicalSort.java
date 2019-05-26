@@ -5,6 +5,12 @@ import java.util.List;
 import java.util.PriorityQueue;
 import java.util.Queue;
 
+/*
+  * tag
+  * lintcode
+  * leetcode
+  * url
+  */
 public class ToplogicalSort {
 
     public static void main(String args[]) {

@@ -1,5 +1,10 @@
 package algorithm.dp;
-
+/*
+  * tag
+  * lintcode
+  * leetcode 152. Maximum Product Subarray
+  * url https://leetcode.com/problems/maximum-product-subarray/
+  */
 public class MaxiumProductSubarray {
     /**
      * @param nums: an array of integers

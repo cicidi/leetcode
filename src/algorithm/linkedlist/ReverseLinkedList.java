@@ -5,14 +5,11 @@ package algorithm.linkedlist;
 * https://leetcode.com/problems/reverse-linked-list/
 */
 
-
 import algorithm.model.ListNode;
 
 public class ReverseLinkedList {
     public static ListNode revert(ListNode node) {
-
         ListNode prev = null;
-
         while (node != null) {
             // 仅仅是为了记录下一个 node
             ListNode tmp = node.next;
@@ -26,5 +23,4 @@ public class ReverseLinkedList {
         }
         return prev;
     }
-
 }

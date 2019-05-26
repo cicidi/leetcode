@@ -1,8 +1,5 @@
 package algorithm.model;
 
-/**
- * @author cicidi on 5/26/19
- */
 public class TreeNode {
     public int val;
     public TreeNode left, right;
