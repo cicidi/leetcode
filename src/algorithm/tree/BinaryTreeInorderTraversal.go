@@ -1,4 +1,4 @@
-package tree
+package main
 
 import "fmt"
 import "github.com/golang-collections/collections/stack"

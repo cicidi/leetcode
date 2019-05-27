@@ -3,6 +3,7 @@ package algorithm.smart_solution;
 /*
 * tag
 * leetcode:792. Number of Matching Subsequences
+* leetcode:734. Number of Subsequences of Form a^i b^j c^k
 * */
 public class NumberOfMatchingSubsequences {
 
