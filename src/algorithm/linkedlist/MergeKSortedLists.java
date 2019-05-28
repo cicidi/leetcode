@@ -13,6 +13,9 @@ import java.util.PriorityQueue;
   * tag
   * lintcode 104. Merge K Sorted Lists
   * https://www.lintcode.com/problem/merge-k-sorted-lists/my-submissions
+  *
+  * 三种解法
+  * https://www.jiuzhang.com/solution/merge-k-sorted-lists/
   */
 public class MergeKSortedLists {
     /**
