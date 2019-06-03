@@ -3,11 +3,11 @@ package algorithm.linkedlist;
 import algorithm.model.ListNode;
 
 /*
-  * tag
-  * lintcode
-  * leetcode 141. Linked List Cycle
-  * url https://leetcode.com/problems/linked-list-cycle/
-  */
+ * tag
+ * lintcode
+ * leetcode 141. Linked List Cycle
+ * url https://leetcode.com/problems/linked-list-cycle/
+ */
 public class LinkedListCycle {
 
 
@@ -36,7 +36,7 @@ public class LinkedListCycle {
 
         if (head == null && head.next == null) return false;
 
-        //这个地方得是head.next   = = !
+        //这个地方得是head.next 不然上来不是直接就fast==slow 等了吗  = = !
         ListNode fast = head.next;
         ListNode slow = head;
         while (slow != fast) {

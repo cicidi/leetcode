@@ -16,7 +16,7 @@ public class LowestCommonAncestor {
         }
 
         //this is very important
-        // only if root =A or B can keep some value, otherwise only returnn to upper level
+        // only if root =A or B can keep some value, otherwise only return to upper level
         if (root == A || root == B) {
             return root;
         }

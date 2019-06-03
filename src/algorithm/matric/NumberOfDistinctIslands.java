@@ -85,12 +85,12 @@ public class NumberOfDistinctIslands {
                 }
             }
         }
-        for (List<GeoType> list : set) {
-            for (GeoType geoType : list) {
+//        for (List<GeoType> list : set) {
+//            for (GeoType geoType : list) {
                 // System.out.printf("x %d,y %d \n", geoType.x,geoType.y);
-            }
+//            }
             // System.out.println("====");
-        }
+//        }
         return set.size();
     }
 

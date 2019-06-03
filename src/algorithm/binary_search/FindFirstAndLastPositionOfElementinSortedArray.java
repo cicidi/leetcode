@@ -6,6 +6,8 @@ package algorithm.binary_search;
   * leetcode 34. Find First and Last Position of Element in Sorted Array
   * url https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/
   */
+
+//important 这道题答案有问题
 public class FindFirstAndLastPositionOfElementinSortedArray {
 
     /**

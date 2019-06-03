@@ -1,75 +1,58 @@
 package algorithm.binary_search;
 
+/**
+ * @author cicidi on 5/26/19
+ */
+
 /*
-  * tag
-  * lintcode
-  * url
-  * leetcode 33. Search in Rotated Sorted Array
-  * url https://leetcode.com/problems/search-in-rotated-sorted-array/
-  */
-
-/* Suppose an array sorted in ascending order is rotated at some pivot unknown to you beforehand.
-
-(i.e., [0,1,2,4,5,6,7] might become [4,5,6,7,0,1,2]).
-
-You are given a target value to search. If found in the array return its index, otherwise return -1.
-
-You may assume no duplicate exists in the array.
-
-Your algorithm's runtime complexity must be in the order of O(log n).
-
-Example 1:
-
-Input: nums = [4,5,6,7,0,1,2], target = 0
-Output: 4
-Example 2:
-
-Input: nums = [4,5,6,7,0,1,2], target = 3
-Output: -1
-*/
+ * tag
+ * lintcode 62. Search in Rotated Sorted Array
+ * https://www.lintcode.com/problem/search-in-rotated-sorted-array/description
+ */
 public class SearchInRotatedSortedArray {
-    public int search(int[] nums, int target) {
-        // 也就是说在某个点重新按大小排序了
-        // 而且要求复杂度是logn 也就是要1/2 这样的去找
-
-        return search(0, nums.length - 1, nums, target);
-    }
-
-    public int search(int start, int end, int[] nums, int target) {
-        if (nums.length == 0) return -1;
-
-        if ((nums[start] > target || nums[end] < target) && isOrdered(start, end, nums)) {
+    /**
+     * @param A:      an integer rotated sorted array
+     * @param target: an integer to be searched
+     * @return: an integer
+     */
+    public int search(int[] A, int target) {
+        if (A == null || A.length == 0) {
             return -1;
         }
 
-        int mid = (start + end) / 2;
-        if (nums[mid] == target) return mid;
-        if (nums[start] == target) return start;
-        if (nums[end] == target) return end;
-        int i = -1, j = -1;
-        if (start < mid) {
-            i = search(start, mid, nums, target);
-            j = search(mid, end, nums, target);
+        int start = 0;
+        int end = A.length - 1;
+        int mid;
+        // important 二分法模板
+        while (start + 1 < end) {
+            mid = start + (end - start) / 2;
+            if (A[mid] == target) {
+                return mid;
+            }
+            if (A[start] < A[mid]) {
+                // notice situation 1, red line
+                if (A[start] <= target && target <= A[mid]) {
+                    end = mid;
+                } else {
+                    start = mid;
+                }
+            } else {
+                // notice situation 2, green line
+                if (A[mid] <= target && target <= A[end]) {
+                    start = mid;
+                } else {
+                    end = mid;
+                }
+            }
+        } // while
+
+        // important 二分法 最后要注意到 A[Start] 和 A[End]
+        if (A[start] == target) {
+            return start;
         }
-        //单纯的用mid <end 不行 这个地方做的不对， 应为mid 可以等于start 但是不能等于end
-        //得用start <mid 并且前面要check 左中右，然后还得把两个recursive search 放在if 里面
-        // if (mid != end)
-
-        return Math.max(i, j);
-
-    }
-
-    public boolean isOrdered(int start, int end, int[] nums) {
-        if (nums[start] > nums[end]) {
-            return false;
+        if (A[end] == target) {
+            return end;
         }
-        return true;
-    }
-
-    public static void main(String[] args) {
-        int[] nums = new int[]{4, 5, 6, 7, 0, 1, 2};
-        int target = 3;
-        SearchInRotatedSortedArray q33 = new SearchInRotatedSortedArray();
-        System.out.println(q33.search(nums, 0));
+        return -1;
     }
 }

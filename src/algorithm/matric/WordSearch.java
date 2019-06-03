@@ -4,7 +4,7 @@ package algorithm.matric;
  * @author cicidi on 5/27/19
  * Lintcode
  * url https://www.lintcode.com/problem/word-search/my-submissions
- * relative `Word Search II`
+ * relative `Word Search II`  word search 1  和 2 没有本质区别 就是search 1 个和多个的问题 多个假设单词都是unique的
  */
 public class WordSearch {
     public boolean exist(char[][] board, String word) {

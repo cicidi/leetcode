@@ -6,6 +6,29 @@ import java.util.PriorityQueue;
  * @author cicidi on 5/26/19
  * Lintcode 401. Kth Smallest Number in Sorted Matrix
  * url https://www.lintcode.com/problem/kth-smallest-number-in-sorted-matrix/my-submissions
+ * <p>
+ * Example
+ * Example 1:
+ * <p>
+ * Input:
+ * [
+ * [1 ,5 ,7],
+ * [3 ,7 ,8],
+ * [4 ,8 ,9],
+ * ]
+ * k = 4
+ * Output: 5
+ * Example 2:
+ * <p>
+ * Input:
+ * [
+ * [1, 2],
+ * [3, 4]
+ * ]
+ * k = 3
+ * Output: 3
+ * Challenge
+ * O*(klogn*) time, n is the maximum of the width and height of the matrix.
  */
 public class KthSmallestNumberInSortedMatrix {
     /**

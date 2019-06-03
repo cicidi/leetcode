@@ -1,8 +1,17 @@
-package src.algorithm.matric;
+package algorithm.matric;
 
 
 import java.util.*;
 
+//notice
+/*
+这道题首先要由一个Tree ，或者叫一个context  他的里面有 Trie， Trie 其实呢是里面带一个Map 的 1对多的树 多叉树？
+里面用一个map 对应了每一层的character 和下一层所有character 的node  当character 到了最后一层，保留那个单词
+这个是insert 时候要做的
+
+Search 的话  这个是在matric 里面search  所以上下左右走就行了， 当node 里面带着word 给打印出来，没有就继续遍历，知道node
+没有子node了
+* */
 public class WordSaerchII_Mine {
     /**
      * @param board: A list of lists of character

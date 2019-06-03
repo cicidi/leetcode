@@ -23,9 +23,9 @@ public class PalindromeLinkedList {
 
 
         ListNode copy = clone(head);
-        ResultType pair = reverse(head);
+        ResultType pair = reverse(head);  //这个reverse 一般其实就够了  但是要用到find mid of linkedlist
         ListNode end = pair.node;
-        for (int i = 0; i <= pair.size / 2; i++) {
+        for (int i = 0; i <= pair.size / 2; i++) {// notice 这个地方要用 1/2 因为palindrmoe 之比较一般，
             // System.out.println(copy);
             // System.out.println(end);
             // System.out.printf("i %d copy: %d end : %d\n",i, copy.val,end.val);

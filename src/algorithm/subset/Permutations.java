@@ -1,6 +1,7 @@
 package algorithm.subset;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author cicidi on 5/26/19
@@ -31,7 +32,7 @@ public class Permutations {
             if (visited[i]) {
                 continue;
             }
-            visited[i] = true; //notice this is the key point
+            visited[i] = true; //notice this is the key point, 如果没有这个 ， 那么会 1，1，1，1，1，1.....一直加下去
             list.add(nums[i]);
             dfs(nums, visited, size + 1, list, result);
             visited[i] = false;

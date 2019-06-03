@@ -7,10 +7,10 @@ import java.util.List;
  * @author cicidi on 5/26/19
  */
 /*
-  * tag
-  * lintcode 374. Spiral Matrix
-  * https://www.lintcode.com/problem/spiral-matrix/description
-  */
+ * tag
+ * lintcode 374. Spiral Matrix
+ * https://www.lintcode.com/problem/spiral-matrix/description
+ */
 public class SpiralMatrix {
     /**
      * @param matrix: a matrix of m x n elements
@@ -31,11 +31,11 @@ public class SpiralMatrix {
         int n = colLength;
         List<Integer> list = new ArrayList<Integer>();
         while (row < rowLength && col < colLength) {
-            if (colLength - col == 1) {
+            if (colLength - col == 1) {// important 这道题的这个条件，也就是两个列之间如果只差1行，那么就不是一个环，要么上下来一遍，
                 upToDown(matrix, col, row, rowLength, list);
                 break;
             }
-            if (rowLength - row == 1) {
+            if (rowLength - row == 1) {//important （接前面）要么左右来一遍
                 leftToRight(matrix, row, col, colLength, list);
                 break;
             }
@@ -53,13 +53,8 @@ public class SpiralMatrix {
     }
 
     public static void leftToRight(int[][] matrix, int row, int start, int end, List<Integer> list) {
-        // System.out.printf("row %d \n",row);
-        // System.out.printf("start %d \n",start);
-        // System.out.printf("end %d \n",end);
-        for (; start < end; start++) { // ?
+        for (; start < end; start++) { // 移动的时候，这个start  ，start 和end 的关系， start 的加减 需要多注意
             list.add(matrix[row][start]);
-            if (matrix[row][start] == 8) {
-            }
         }
 
     }
@@ -67,16 +62,12 @@ public class SpiralMatrix {
     public static void upToDown(int[][] matrix, int col, int start, int end, List<Integer> list) {
         for (; start < end; start++) { // ?
             list.add(matrix[start][col]);
-            if (matrix[start][col] == 8) {
-            }
         }
     }
 
     public static void rightToLeft(int[][] matrix, int row, int start, int end, List<Integer> list) {
         for (; start > end; start--) { // ?
             list.add(matrix[row][start]);
-            if (matrix[row][start] == 8) {
-            }
         }
 
     }
@@ -84,8 +75,6 @@ public class SpiralMatrix {
     public static void downToUp(int[][] matrix, int col, int start, int end, List<Integer> list) {
         for (; start > end; start--) { // ?
             list.add(matrix[start][col]);
-            if (matrix[start][col] == 8) {
-            }
         }
     }
 }

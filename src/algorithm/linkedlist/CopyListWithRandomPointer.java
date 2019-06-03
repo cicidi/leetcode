@@ -4,10 +4,10 @@ package algorithm.linkedlist;
  * @author cicidi on 5/26/19
  */
 /*
-  * tag
-  * lintcode 105. Copy List with Random Pointer
-  * https://www.lintcode.com/problem/copy-list-with-random-pointer/my-submissions
-  */
+ * tag
+ * lintcode 105. Copy List with Random Pointer
+ * https://www.lintcode.com/problem/copy-list-with-random-pointer/my-submissions
+ */
 public class CopyListWithRandomPointer {
     /**
      * @param head: The head of linked list with a random pointer.
@@ -28,16 +28,12 @@ public class CopyListWithRandomPointer {
 
     public void copyNextNode(RandomListNode head) {
         while (head != null) {
-            System.out.printf("head: %d \n", head.label);
             RandomListNode next = head.next;
-            System.out.println(next);
             RandomListNode random = head.random;
             RandomListNode newNode = new RandomListNode(head.label);
             newNode.next = next;
             newNode.random = random;
             head.next = newNode;
-            System.out.println("head next next");
-            System.out.println(head.next.next);
             head = head.next.next;
         }
     }
@@ -65,8 +61,6 @@ public class CopyListWithRandomPointer {
             }
             head = head.next;
         }
-        System.out.println("newNode.next.label");
-        System.out.println(newNode.label);
         return newNode;
     }
 
