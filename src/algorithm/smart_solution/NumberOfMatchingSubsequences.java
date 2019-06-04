@@ -4,6 +4,26 @@ package algorithm.smart_solution;
 * tag
 * leetcode:792. Number of Matching Subsequences
 * leetcode:734. Number of Subsequences of Form a^i b^j c^k
+//Given string S and a dictionary of words words, find the number of words[i] that is a subsequence of S.
+//
+//
+//Example :
+//Input:
+//S = "abcde"
+//words = ["a", "bb", "acd", "ace"]
+//Output: 3
+//Explanation: There are three words in words that are a subsequence of S: "a", "acd", "ace".
+//
+//
+// Note:
+//
+//
+// All words in words and S will only consists of lowercase letters.
+// The length of S will be in the range of [1, 50000].
+// The length of words will be in the range of [1, 5000].
+// The length of words[i] will be in the range of [1, 50].
+//
+//
 * */
 public class NumberOfMatchingSubsequences {
 
@@ -14,7 +34,7 @@ public class NumberOfMatchingSubsequences {
         // caused by different combination of 'a' 
         int aCount = 0;
 
-        // Initialize counts of different subsequences 
+        // Initialize counts of different subsequences
         // caused by different combination of 'a' and 
         // different combination of 'b' 
         int bCount = 0;
@@ -67,7 +87,7 @@ public class NumberOfMatchingSubsequences {
 
     // Driver code 
     public static void main(String args[]) {
-        String s = "abca";
+        String s = "abcabc";
         System.out.println(countSubsequences(s));
     }
 }

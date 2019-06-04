@@ -11,6 +11,9 @@ public class ReverseWordsInAStringII {
      * @param str: a string
      * @return: return a string
      */
+
+    // yellow 这道题的重点在于 有没有space， 没有没有space 直接开心的reverse 整个string
+    // notice 如果有space 那么记录space 比如end， 那么start 到end-1 之间要swap，  important 之后start的位置变成了end+1  ，end 等于 start 再加一 // 这个地方比较巧妙
     public char[] reverseWords(char[] str) {
         // write your code here'
 

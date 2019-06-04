@@ -70,7 +70,7 @@ public class KthSmallestNumberInSortedMatrix {
         int row;
         int column;
 
-        public Cell(int value, int row, int column) {
+        Cell(int value, int row, int column) {
             this.value = value;
             this.row = row;
             this.column = column;

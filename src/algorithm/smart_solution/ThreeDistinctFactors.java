@@ -24,13 +24,11 @@ public class ThreeDistinctFactors {
     }
 
     public boolean isPrime(double n) {
-
         for (double i = 2; i < Math.sqrt(n); i++) {
             if (n % i == 0) {
                 return false;
             }
         }
-
         return true;
     }
 }

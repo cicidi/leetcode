@@ -9,10 +9,10 @@ import java.util.*;
  */
 public class CourseSchedule {
     /*
-         * @param numCourses: a total of n courses
-         * @param prerequisites: a list of prerequisite pairs
-         * @return: true if can finish all courses or false
-         */
+     * @param numCourses: a total of n courses
+     * @param prerequisites: a list of prerequisite pairs
+     * @return: true if can finish all courses or false
+     */
     public boolean canFinish(int numCourses, int[][] prerequisites) {
         // write your code here
 
@@ -29,6 +29,8 @@ public class CourseSchedule {
             System.out.printf("from %d  to %d\n", from, to);
             List<Integer> list = map.getOrDefault(from, new ArrayList<Integer>());
             list.add(to);
+
+            // notice 这个地方其实没有必要用map 用arraylist 也行
             map.put(from, list);
             indegree[to]++;
         }

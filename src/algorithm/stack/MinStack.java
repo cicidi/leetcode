@@ -2,12 +2,12 @@ package algorithm.stack;
 
 import java.util.Stack;
 /*
-  * tag
-  * lintcode
-  * url https://www.lintcode.com/problem/alien-dictionary/description
-  * leetcode
-  * url
-  */
+ * tag
+ * lintcode
+ * url https://www.lintcode.com/problem/alien-dictionary/description
+ * leetcode
+ * url
+ */
 
 
 public class MinStack {
@@ -27,7 +27,7 @@ public class MinStack {
 
         stack.add(number);
         if (!minStack.isEmpty()) {
-            number = Math.min(number, minStack.peek()); //notice: use peek here
+            number = Math.min(number, minStack.peek()); //important : use peek here, dont use pop
         }
         minStack.add(number);
     }

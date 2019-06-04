@@ -13,6 +13,13 @@ public class PartitionToKEqualSumSubsets {
      * @param k:    an integer
      * @return: return a boolean, denote whether the array can be divided into k non-empty subsets whose sums are all equal
      */
+
+    //important 大概记录一下note 这道题不会做，只能背
+    // 先保证能够分，
+    // 之后从最后一个数字开始， 算sum
+    // 当index 遍历到-1  recursion 停止
+    // 如果当前的partition true 就停止
+    // 如果当前partition false 后悔算法，currentSubSum[i] -= selected;
     public boolean partitiontoEqualSumSubsets(int[] nums, int k) {
         // write your code here
 

@@ -3,11 +3,11 @@ package algorithm.subset;
 import java.util.*;
 
 /*
-  * tag
-  * lintcode
-  * leetcode
-  * url
-  */
+ * tag
+ * lintcode
+ * leetcode
+ * url
+ */
 
 public class Subsets {
 
@@ -30,8 +30,10 @@ public class Subsets {
         List<Integer> tmp = new ArrayList<>();
         for (int i = level; i < nums.length; i++) {
             tmp.add(nums[level]);
+            // 选了 nums[index]
             dfs(nums, level + 1, tmp, result);
             tmp.remove(tmp.size() - 1);
+            // 不选 nums[index]  // important 这个是他和permutation 的关键，少一个元素的我也要!
             dfs(nums, level + 1, tmp, result);
         }
     }

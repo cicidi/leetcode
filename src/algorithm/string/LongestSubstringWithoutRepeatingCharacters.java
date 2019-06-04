@@ -13,6 +13,7 @@ public class LongestSubstringWithoutRepeatingCharacters {
      * @param s: a string
      * @return: an integer
      */
+    //important 这道题用了一层for 加一层while loop 基本上就是求range 题
     public int lengthOfLongestSubstring(String s) {
         int[] map = new int[256];
         int max = 0; // notice max start 0;
@@ -23,7 +24,7 @@ public class LongestSubstringWithoutRepeatingCharacters {
                 max = Math.max(max, j - i + 1);
                 j++;
             }
-            map[s.charAt(i)] = 0; // notice  should reset to 0, and check another substring
+            map[s.charAt(i)] = 0; // notice  map需要归零，重新计算另一个string
             //notice  use 'i' here, because if use j, might get out of index
         }
         return max;

@@ -14,11 +14,12 @@ public class FindTheCelebrity {
         // Write your code here
         int ans = 0;
         //
-        // since celebrity know noone, if i is the celebrity if wont change to anython value
-        // but there is a change that his celebrity is a fake one, who know people before i
+        // since celebrity know no one, if i is the celebrity if wont change to anython value
+        // but there is a chance that his celebrity is a fake one, who know people before i
         // so need to check one more time in the next loop.
         for (int i = 1; i < n; i++) {
             if (knows(ans, i)) {
+                // important 这句话比较难想： 这样一直走下去，最后只有大家都认识的人才会 被放在answer 里面 但是最后是不是 名人， 还需要检验一遍
                 ans = i;
             }
         }

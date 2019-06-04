@@ -3,10 +3,10 @@ package algorithm.toplogical;
 import java.util.*;
 
 /*
-* tag
-* lintcode 892. Alien Dictionary
-* https://www.lintcode.com/problem/alien-dictionary/description
-*/
+ * tag
+ * lintcode 892. Alien Dictionary
+ * https://www.lintcode.com/problem/alien-dictionary/description
+ */
 
 public class AlienDictionary {
     public String alienOrder(String[] words) {
@@ -28,7 +28,7 @@ public class AlienDictionary {
         for (int i = 1; i < words.length; i++) {
             String first = words[i - 1];
             String second = words[i];
-            int length = Math.min(first.length(), second.length());// 取最小的长度取比，因为多余的地方没法比indegree
+            int length = Math.min(first.length(), second.length());//yellow  取最小的长度取比，因为多余的地方没法比indegree
 
             for (int j = 0; j < length; j++) {
                 char parent = first.charAt(j);
@@ -38,7 +38,7 @@ public class AlienDictionary {
                         graph.get(parent).add(child);  // 不在加到图里面
                         inDegree[child - 'a']++;  // 并且child 的 indegree 还要加1
                     }
-                    break;// 因为已经有一个child了  说明已经在某个位置发生了不一样的字符串，所以就没有必要在继续下面比较了
+                    break;// notice 因为已经有一个child了  说明已经在某个位置发生了不一样的字符串，所以就没有必要在继续下面比较了
                 }
             }
         }

@@ -10,6 +10,9 @@ public class MonotoneIncreasingDigits {
      * @param num: a non-negative integer N
      * @return: the largest number that is less than or equal to N with monotone increasing digits.
      */
+
+    //important 这道题有两点要注意，一个就是分清楚 这个A 的顺序是从左往右还是从右往左的
+    //important 第二个是当 第一个digital 比第二个digital 大的时候， 前一个digital 剪掉1， 后面所有位数都变成 999999
     public int monotoneDigits(int num) {
         // write your code here
 

@@ -3,6 +3,10 @@ package algorithm.map;
 public class HashMap<K, V> {
 
 
+    public HashMap() {
+
+    }
+
     public static void main(String[] args) {
 
         System.out.println(8 & 3);

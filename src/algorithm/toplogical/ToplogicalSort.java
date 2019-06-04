@@ -6,11 +6,18 @@ import java.util.PriorityQueue;
 import java.util.Queue;
 
 /*
-  * tag
-  * lintcode
-  * leetcode
-  * url
-  */
+ * tag
+ * lintcode
+ * leetcode
+ * url
+ */
+
+// notice 方法
+//  先创建edge
+//  在创建入度
+//  入度 为零的先扔到Q里面去
+//  不段从Q里面去， 一个是把刚取出来的放到结果集， 另一个是用这个node 去找他的所有toNode
+//  toNode 的入度-1， 如果为零 扔回到Q 里面去
 public class ToplogicalSort {
 
     public static void main(String args[]) {
@@ -33,7 +40,7 @@ public class ToplogicalSort {
 
     public ToplogicalSort(int V) {
         this.V = V;
-
+        // notice 用一个array 就能够表现一个edge 关系， index 是from， 值是出去，
         adj = (ArrayList<Integer>[]) new ArrayList[V];
         for (int i = 0; i < V; i++) {
             adj[i] = new ArrayList<>();
@@ -45,10 +52,9 @@ public class ToplogicalSort {
     }
 
     public void toplogicalSort() {
-
         int[] indegree = new int[V];
-
         for (int i = 0; i < V; i++) {
+            // notice 用一个arrayList 就可以表示入度
             List<Integer> toVertexList = adj[i];
             for (int toVertex : toVertexList) {
                 indegree[toVertex]++;
@@ -57,19 +63,20 @@ public class ToplogicalSort {
         Queue<Integer> queue = new PriorityQueue<>();
         for (int index = 0; index < V; index++) {
             if (indegree[index] == 0) {
-                queue.offer(index);
+                queue.offer(index); // notice 把所有入读位零的index 先加到q 里面
             }
         }
-
         int count = 0;
-
         List<Integer> sortedList = new ArrayList<>();
         while (!queue.isEmpty()) {
-
             int vertex = queue.poll();
             sortedList.add(vertex);
             System.out.printf("vertex %d \n", vertex);
+            //notice 遍历这个入读位0 的node edge  把他的toNode 找出来， 那个node 的入度找出来-1
+            // 如果等于零，加到queue 里面去
+            // important 不要直接加到结果集里面去
             for (int toVertex : adj[vertex]) {
+
                 indegree[toVertex] -= 1;
                 if (indegree[toVertex] == 0) {
                     queue.offer(toVertex);

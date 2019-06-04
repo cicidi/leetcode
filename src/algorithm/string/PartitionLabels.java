@@ -37,6 +37,12 @@ public class PartitionLabels {
      * @param S: a string
      * @return: a list of integers representing the size of these parts
      */
+
+    // notice 用了几个技巧， 第一 先把所有char都计算出来出现次数
+    // notice 第二用一个set 记录每次发生一次添加一个char 就给他记录进来
+    // notice 当然同时在map 里面把他的count 给-1
+    // notice 最后如果set 里面没有当前这个char 了  就可以切割了，记录切割时候的index
+    // notice 启动位置用start 记录，因为这道题求的是每一段的长度
     public List<Integer> partitionLabels(String S) {
         // Write your code here
         if (S == null || S.length() == 0)

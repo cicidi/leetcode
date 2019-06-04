@@ -37,7 +37,7 @@ public class OptimalDivision {
      * @param nums: an array
      * @return: the corresponding expression in string format
      */
-    public String optimalDivision(int[] nums) {
+    public String optimalDivision(int[] nums) { //important 让分母最小，也就是一直除呗
         // Write your code here
         if (nums == null || nums.length == 0) {
             return "";
