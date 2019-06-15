@@ -19,7 +19,7 @@ public class BestTimeToBuyAndSellStock {
         int min = Integer.MAX_VALUE;
         int maxProfile = 0;
         for (int price : prices) {
-            min = Math.min(min, price);  // notice write download lowest prices in the past
+            min = Math.min(min, price);  // notice write down lowest prices in the past
             maxProfile = Math.max(price - min, maxProfile);  // notice check each price minus min
         }
         return maxProfile;
