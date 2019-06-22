@@ -44,7 +44,6 @@ public class BasicCalculatorII {
                 op = c;
                 num = 0;
             }
-
         }
         int sum = 0;
         while (!stack.isEmpty()) {

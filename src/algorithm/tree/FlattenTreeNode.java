@@ -3,14 +3,16 @@ package algorithm.tree;
 import algorithm.model.TreeNode;
 
 /*
-  * tag
-  * lintcode
-  * leetcode 114. Flatten Binary Tree to Linked List
-  * url https://leetcode.com/problems/flatten-binary-tree-to-linked-list/
-  */
+ * tag
+ * lintcode
+ * leetcode 114. Flatten Binary Tree to Linked List
+ * url https://leetcode.com/problems/flatten-binary-tree-to-linked-list/
+ */
 public class FlattenTreeNode {
     private TreeNode dummy = null;
 
+    // important  这道题的code 写法很巧妙， 我可能写不出来
+    //  先假设一个dummy  并且 dummy 写当作 最右下子树的右子树
     public void flatten(TreeNode root) {
         if (root == null)
             return;
