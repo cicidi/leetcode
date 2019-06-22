@@ -20,7 +20,7 @@ public class Heapify {
         int length = A.length;
         if (length == 0)
             return;
-        //notice 从中点开始
+        //notice 从中点开始 从后往前scan
         for (int i = length / 2; i >= 0; i--) {
             scanFromMidToLeft(A, i);
         }

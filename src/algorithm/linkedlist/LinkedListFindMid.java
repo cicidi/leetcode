@@ -10,9 +10,9 @@ import algorithm.model.ListNode;
  */
 
 
-//fast跑的速度等于1+2s
-//slow跑的速度等于s
-//所以当1+2s跑到头了 slow 也就在中点了 因为slow跑了s ， 中点刚好也是2s+1/2 也等于s
+//notice fast跑的速度等于1+2s
+//notice slow跑的速度等于s
+//notice 所以当1+2s跑到头了 slow 也就在中点了 因为slow跑了s ， 中点刚好也是2s+1/2 也等于s
 public class LinkedListFindMid {
     public static ListNode findMid(ListNode head) {
         ListNode slow = head;

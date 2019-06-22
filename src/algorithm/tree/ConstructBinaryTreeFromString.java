@@ -52,6 +52,7 @@ public class ConstructBinaryTreeFromString {
             return null;
         }
 
+        // notice 保留sig
         int length = s.length();
         int sig = 1, k = 0; //可以用一个int 设置两个参数
         if (s.charAt(index) == '-') {
@@ -59,11 +60,15 @@ public class ConstructBinaryTreeFromString {
             index++; // 记得在这里++一次，因为往前走了一步
         }
 
+        //notice 组成数字
         while (index < length && Character.isDigit(s.charAt(index))) {
             k = k * 10 + s.charAt(index) - '0';  //  array to number   k=k*10+A[i];
             index++;  // 前进一步
         }
 
+        //notice 创建新的treeNode
+        // notice 当这种情况发生的时候 (index >= length || s.charAt(index) == ')')  那么代表一个node 的描述已经结束， 需要返回了，
+        // 如果不是的话，那么就用recursion node.left = 剩下的， node.right = 剩下的“剩下”的
         TreeNode node = new TreeNode(k * sig);  // 要乘以系数
         if (index >= length || s.charAt(index) == ')') {
             index++; //skip 当前的")"
