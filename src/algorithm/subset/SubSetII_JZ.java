@@ -34,6 +34,15 @@ notice
 剩下的 Subset 1 和subset 2 是一样的
 */
 public class SubSetII_JZ {
+
+    public static void main(String[] args) {
+        Solution s = new Solution();
+        int[] data = new int[]{1, 2, 2};
+        List<List<Integer>> result = s.subsetsWithDup(data);
+        System.out.println(Arrays.toString(result.toArray()));
+    }
+
+
     static class Solution {
         /**
          * @param nums: A set of numbers.
@@ -51,8 +60,8 @@ public class SubSetII_JZ {
             Arrays.sort(nums);
 
             List<Integer> subset = new ArrayList<>();
-            helper(nums, 0, subset, result);
-//            dfs(nums, 0, -1, subset, result);
+//            helper(nums, 0, subset, result);
+            dfs(nums, 0, -1, subset, result);
 
             return result;
 
@@ -79,7 +88,7 @@ public class SubSetII_JZ {
             }
             dfs(nums, index + 1, lastSelectedIndex, subset, result);
             if (index > 0 && nums[index] == nums[index - 1] && index - 1 != lastSelectedIndex) { //没看懂这句话什么意思
-                // important 这里是subset1 和2 不同的地方，
+                // important 这里是subset1 和 2 不同的地方，
                 return;
             }
             subset.add(nums[index]);

@@ -1,0 +1,24 @@
+Restaurant 
+	
+	Level 
+		GOLD(3),SILVER(2),BRONZE(1)
+	User
+		uuid
+		int level
+		List<User> friends 
+		uuid lastUpgradeRef;
+
+		public void upgradeFriends(){
+			friends.foreach(f->f.upgradeLevel(this.lastUpgradeRef));
+		}
+
+		public upgradeLevel(uuid lastUpgradeRef){
+			if (this.lastUpgradeRef.equal(lastUpgradeRef)){
+				return;
+			}
+			this.lastUpgradeRef=lastUpgradeRef;
+			if level==gold
+				upgradeFiiends();	
+			}
+
+		}
