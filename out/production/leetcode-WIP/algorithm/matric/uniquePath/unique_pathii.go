@@ -1,10 +1,10 @@
-package matric
+package uniquePath
 
 import "fmt"
 
 /*
 * tag
-* lintcode 62. Unique Paths
+* leetcode 62. Unique Paths
 * https://leetcode.com/problems/unique-paths/
 */
 func uniquePathsWithObstacles(obstacleGrid [][]int) int {

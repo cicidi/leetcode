@@ -1,4 +1,4 @@
-package matric
+package main
 
 import "fmt"
 
@@ -6,7 +6,7 @@ import "fmt"
 * tag Matrix
 * leetcode 59. Spiral Matrix II 892. Alien Dictionary
 * https://leetcode.com/problems/spiral-matrix-ii/
-*/
+ */
 
 func generateMatrix(n int) [][]int {
 	number := 0
@@ -22,6 +22,7 @@ func generateMatrix(n int) [][]int {
 		// travese right
 		for i := columnStart; i <= columnEnd; i++ {
 			matric[rowStart][i] = number
+			println(number)
 			number++
 		}
 		rowStart++
@@ -29,6 +30,7 @@ func generateMatrix(n int) [][]int {
 
 		for i := rowStart; i <= rowEnd; i++ {
 			matric[i][columnEnd] = number
+			println(number)
 			number++
 		}
 		columnEnd--
@@ -36,12 +38,14 @@ func generateMatrix(n int) [][]int {
 		// traverse left
 		for i := columnEnd; i >= columnStart; i-- {
 			matric[rowEnd][i] = number
+			println(number)
 			number++
 		}
 
 		rowEnd--
 		for i := rowEnd; i >= rowStart; i-- {
 			matric[i][columnStart] = number
+			println(number)
 			number++
 		}
 
@@ -51,5 +55,5 @@ func generateMatrix(n int) [][]int {
 	return matric
 }
 func main() {
-	fmt.Println(generateMatrix(3))
+	fmt.Println(generateMatrix(4))
 }
