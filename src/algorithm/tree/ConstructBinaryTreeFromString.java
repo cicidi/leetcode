@@ -37,7 +37,27 @@ import algorithm.model.TreeNode;
  * -1
  */
 
+/*
+ * note June 17th 2019
+ * 1. start from left
+ * 2. get the first number
+ * 3. if see first( , then it is going to next level
+ * 4. for the next level, use recurssion , until see next )
+ * */
+
+
+
 public class ConstructBinaryTreeFromString {
+    static class Solution {
+        public TreeNode convert(String s) {
+
+            if (s == null || s.length() == 0) {
+                return null;
+            }
+            return null;//?
+        }
+    }
+
     /**
      * @param s: a string
      * @return: a root of this tree
