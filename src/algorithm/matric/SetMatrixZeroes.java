@@ -33,7 +33,7 @@ public class SetMatrixZeroes {
 
     //important 我自己写的这个方法用了m*n 的space 这样不好
     //notice 答案里给的方法是， 先检测用第一行和第一例做标签， 如果某个cell 有0 ，那么另他的row 和col 的对应的第一个都设置成0
-    //notice 然后我们在根据第一行，或者第一列有没有0 把所有的cell 便令
+    //notice 然后我们在根据第一行，或者第一列有没有0 把所有的cell 遍历
     //important 在这之前需要做一步是因为第一行和第一列被认为添加0 了，所以需要先判断他们之前有没有0， 如果之前有0，需要在这之后把
     //important 行列都变成0
     public void setZeroes(int[][] matrix) {

@@ -10,6 +10,8 @@ import java.util.Set;
  * Lintcode 864. Equal Tree Partition
  * url https://www.lintcode.com/problem/equal-tree-partition/description
  */
+
+// notice 把这道题转化成找到任意的子树的sum 等于sum/2
 public class EqualTreePartition {
     /**
      * @param root: a TreeNode

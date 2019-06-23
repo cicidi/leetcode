@@ -1,7 +1,14 @@
-package src.algorithm.heap;
+package algorithm.heap;
 
 //important 这道题只能被
 //recite
+/*
+* Given an integer array, heapify it into a min-heap array.For a heap array A, A[0] is the root of heap,
+* and for each A[i], A[i * 2 + 1] is the left child of A[i] and A[i * 2 + 2] is the right child of A[i].
+* 给出一个整数数组，堆化操作就是把它变成一个最小堆数组。对于堆数组A，A[0]是堆的根，并对于每个A[i]，
+* A [i * 2 + 1]是A[i]的左儿子并且A[i * 2 + 2]是A[i]的右儿子。
+
+* */
 public class Heapify {
     /*
      * @param A: Given an integer array

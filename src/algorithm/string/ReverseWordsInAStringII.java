@@ -24,7 +24,8 @@ public class ReverseWordsInAStringII {
         boolean hasSpace = false;
         int length = str.length;
         for (; end < str.length; ) {
-            if (end == length - 1 && hasSpace) {
+            if (end == length - 1 && hasSpace) {//notice 要check一下有没有space  如果不 check forloop 外面也有一个reverset
+                //  notice 就reverse 回来了
                 reverse(str, start, end);
             }
             if (str[end] == ' ') {
