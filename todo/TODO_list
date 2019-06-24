@@ -1,0 +1,17 @@
+we work interview
+https://leetcode.com/problems/minimum-window-substring/
+https://leetcode.com/problems/string-compression/
+https://leetcode.com/problems/reorder-log-files/
+https://www.lintcode.com/problem/shortest-distance-from-all-buildings/
+https://leetcode.com/problems/gas-station/
+https://leetcode.com/problems/minimum-genetic-mutation/
+sliding window
+
+很年轻 之前是tableau的manager 人也很nice而且很geek 题目很有意思： 说是因为川普倒行逆施，导致人神共愤，有人打算写封匿名信去威胁他，
+但是这个人又不想暴露自己身份，所以就用去抠报纸上的字，用一个个字去拼出这封匿名信。题目1 是给你一封想写的信和一张报纸 判定是否能用这张报纸组合出你这封信
+follow up1: 考虑到有些字母其实拼错了但是不影响阅读，比如 “bad” 里的字母"b"你用“6” 去替换 得到“6ad“，依然你是可以猜到这个单词是什么意思的。
+那在这种放宽了匹配的条件下，判读是否能用这张报纸组合出你这封信
+
+问怎么设计一个生成unique id的service。
+
+判断是不是BST，利口原题吧。
