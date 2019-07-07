@@ -44,8 +44,26 @@ The point (1,0) or (0,1) is an ideal empty land to build a house, as the total t
 * Related problems
 * lintcode 912 BestMeetingPoint  WallsAndGates / BuildPostOffice II
  *
- *
+ *note
+ * 1 The idea of solve this problem is to start from all building, and go 4 directions. if arrive edge or block or visited , then do not move forward at this direction.
+Use a distance metric to cumulate distance when move in the metric. When finish the distance metric should contains distance between the point at that position with all canReached building.
+
+When to finish
+	-> Once all all building route done.
+How to find shortest path
+	-> if the point in metric can reached by all building. find the smallest value;
+
+1 prepare  ,
+	rows cols,
+	check null
+	distance[][] ->global
+	canReach[][] ->global
+		vistited[][] is create for each building travel -> building travel level
+2 start travel from all building
+3 get lowest distance
+
  * * */
+
 
 import java.util.LinkedList;
 import java.util.Queue;
@@ -53,13 +71,11 @@ import java.util.Queue;
 public class ShortestDistanceFromAllBuildings {
 
     public static void main(String[] args) {
-//        String[] input = new String[]{
-//                "wrt", "wrf", "er", "ett", "rftt"
-//        };
+        int[][] input = new int[][]{
+                {1, 1, 1, 1, 1, 0}, {0, 0, 0, 0, 0, 1}, {0, 1, 1, 0, 0, 1}, {1, 0, 0, 1, 0, 1}, {1, 0, 1, 0, 0, 1}, {1, 0, 0, 0, 0, 1}, {0, 1, 1, 1, 1, 0}
+        };
         Solution s = new Solution();
-
-
-        System.out.println();
+        System.out.println(s.shortestDistance(input));
     }
 
     static class Solution {
@@ -75,15 +91,17 @@ public class ShortestDistanceFromAllBuildings {
             int cols = grid[0].length;
 
             int[][] dist = new int[rows][cols];
+            // notice 每一个点在不同的 起点出发的时候，有可能会被reach 到， 最多reach 次数应该是building 总数
             int[][] canReach = new int[rows][cols];
             int totalBuilding = 0;
 
             // for loop metric
             for (int i = 0; i < rows; i++) {
                 for (int j = 0; j < cols; j++) {
-                    totalBuilding++;
-                    if (grid[i][j] == 1)
+                    if (grid[i][j] == 1) {
+                        totalBuilding++;
                         bfs(grid, i, j, canReach, dist, rows, cols);
+                    }
                 }
             }
             int result = Integer.MAX_VALUE;
@@ -101,23 +119,23 @@ public class ShortestDistanceFromAllBuildings {
         }
 
         void bfs(int[][] grid, int row, int col, int[][] canReach, int[][] dist, int rows, int cols) {
-            Queue<int[]> q = new LinkedList<>();
             boolean[][] visited = new boolean[rows][cols];
+            Queue<int[]> q = new LinkedList<>();
             q.offer(new int[]{row, col});
             int distance = 0;
             while (!q.isEmpty()) {
                 int size = q.size();
                 for (int i = 0; i < size; i++) {
+                    int[] cur = q.poll();
+                    canReach[cur[0]][cur[1]]++;
+                    dist[cur[0]][cur[1]] += distance;
                     for (int dir = 0; dir < 4; dir++) {
-                        int[] cur = q.poll();
                         int rr = cur[0] + rowDir[dir];
                         int cc = cur[1] + colDir[dir];
                         if (!isValid(rr, cc, visited, grid, rows, cols)) {
                             continue;
                         }
                         visited[rr][cc] = true;
-                        dist[rr][cc] += distance;
-                        canReach[rr][cc]++;
                         q.offer(new int[]{rr, cc});
                     }
                 }
@@ -126,7 +144,7 @@ public class ShortestDistanceFromAllBuildings {
         }
 
         boolean isValid(int rr, int cc, boolean[][] visited, int[][] grid, int rows, int cols) {
-            return rr > 0 && rr < rows && cc > 0 && cc < cols && !visited[rr][cc] && grid[rr][cc] == 0;
+            return rr >= 0 && rr < rows && cc >= 0 && cc < cols && !visited[rr][cc] && grid[rr][cc] == 0;
 
         }
     }

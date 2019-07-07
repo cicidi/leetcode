@@ -51,7 +51,7 @@ public class PredictTheWinner {
             if (left == right) {
                 return nums[left];
             }
-            //important   这个nums[left]-help 求和下一层的差值
+            //important   这个nums[left]-help 求和下一层的差a值
             return Math.max(nums[left] - helper(nums, left + 1, right), nums[right] - helper(nums, left, right - 1));
 
         }

@@ -15,3 +15,36 @@ follow up1: 考虑到有些字母其实拼错了但是不影响阅读，比如 �
 问怎么设计一个生成unique id的service。
 
 判断是不是BST，利口原题吧。
+
+
+0,1,2,3,4,5
+
+A[i][j]
+B[i][cols-1-1]
+
+a,b,c,d.....x,y,z
+0,1.............25
+3,1,2,......... ,1
+
+    A[][]
+    B[][]
+
+    for (){
+        for()
+            if ()
+            dfs
+        }
+    }
+
+    dfs(A[][],B[][], int index, dic[]){
+        if index > dic.length
+            return
+        if dic[index]>0 {
+            dfs(A[][],B[][],index+1,dic[])
+        }else{
+            dfs(A[][],B[][], index+1,dic[])
+        }
+    }
+
+take row i , col j
+will also take
