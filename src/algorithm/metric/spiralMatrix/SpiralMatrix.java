@@ -1,4 +1,4 @@
-package algorithm.matric.spiralMatrix;
+package algorithm.metric.spiralMatrix;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package algorithm.matric.uniquePath;
+package algorithm.metric.uniquePath;
 
 
 // pink note :
