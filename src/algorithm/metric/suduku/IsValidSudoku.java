@@ -1,4 +1,4 @@
-package algorithm.matric.suduku;
+package algorithm.metric.suduku;
 
 import java.util.Arrays;
 

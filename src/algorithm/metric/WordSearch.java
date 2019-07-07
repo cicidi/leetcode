@@ -1,4 +1,4 @@
-package algorithm.matric;
+package algorithm.metric;
 
 /**
  * @author cicidi on 5/27/19
