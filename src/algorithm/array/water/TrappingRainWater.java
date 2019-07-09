@@ -19,25 +19,25 @@ public class TrappingRainWater {
         if (heights.length == 0) {
             return 0;
         }
-        int left = 0;
-        int right = heights.length - 1;
-        int leftHeight = heights[left];
-        int rightHeight = heights[right];
+        int leftIndex = 0;
+        int rightIndex = heights.length - 1;
+        int leftValue = heights[leftIndex];
+        int rightValue = heights[rightIndex];
         int sum = 0;
-        while (left < right) {
-            if (leftHeight < rightHeight) { //notice 从两边移动 谁小移动谁
-                left++;
-                if (leftHeight > heights[left]) {
-                    sum += leftHeight - heights[left];  //左边蓄的水进入到总数
+        while (leftIndex < rightIndex) {
+            if (leftValue < rightValue) { //notice 从两边移动 谁小移动谁
+                leftIndex++;
+                if (leftValue > heights[leftIndex]) {
+                    sum += leftValue - heights[leftIndex];  //左边蓄的水进入到总数
                 } else {
-                    leftHeight = heights[left];
+                    leftValue = heights[leftIndex];
                 }
             } else {
-                right--;
-                if (rightHeight > heights[right]) {
-                    sum += rightHeight - heights[right];//右边虚的水进入到总数
+                rightIndex--;
+                if (rightValue > heights[rightIndex]) {
+                    sum += rightValue - heights[rightIndex];//右边虚的水进入到总数
                 } else {
-                    rightHeight = heights[right];
+                    rightValue = heights[rightIndex];
                 }
             }
         }
