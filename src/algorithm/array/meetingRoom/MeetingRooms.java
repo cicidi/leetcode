@@ -1,4 +1,4 @@
-package algorithm.array.meetingRoot;
+package algorithm.array.meetingRoom;
 
 import algorithm.model.Interval;
 
