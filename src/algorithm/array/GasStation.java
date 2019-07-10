@@ -45,7 +45,7 @@ public class GasStation {
             int index = -1;
 
             for (int i = 0; i < gas.length; i++) {
-                sum += gas[i] - cost[i];  //一个用来track 当前 sum  如果sum 小于0  走下一个
+                sum += gas[i] - cost[i];  //notice 一个用来track 当前 sum  如果sum 小于0  index走下一个, sum重新开始
                 total += gas[i] - cost[i]; // 用一个total 来track
                 if (sum < 0) {
                     index = i;

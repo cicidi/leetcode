@@ -1,4 +1,4 @@
-package algorithm.array.meetingRoot;
+package algorithm.array.meetingRoom;
 
 import algorithm.model.Interval;
 
@@ -29,7 +29,8 @@ public class MeetingRooms {
             if (intervals.get(i).start < end) {
                 return false;  //notice 如果有个meeting 的start 在前面有个meeting的end 前面，那么算失败了
             }
-            end = Math.max(end, intervals.get(i).end);//notice ua记录前面所有meeting 的最后end 时间
+//            end = Math.max(end, intervals.get(i).end);//notice ua记录前面所有meeting 的最后end 时间
+            end = Math.max(end, intervals.get(i).end);//notice 2019,07.09 update: 没有 max 一样work
         }
         return true;
     }
@@ -38,9 +39,9 @@ public class MeetingRooms {
 class IntervalComparator implements Comparator<Interval> {
     public int compare(Interval i1, Interval i2) {
         if (i1.start == i2.start) {
-            return i1.end - i2.end;
+            return i1.end - i2.end; // notice second sort by start
         } else {
-            return i1.start - i2.start;
+            return i1.start - i2.start;  //notice first sort by end
         }
     }
 }

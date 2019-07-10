@@ -56,7 +56,7 @@ public class MergeSort {
 
     public static void setValue(int[] A, int[] SUB, int start, int end) {
         for (int i = start; i < end; i++) {
-            SUB[i - start] = A[i];
+            SUB[i - start] = A[i];  // notice 这个地方比较巧妙
         }
     }
 }
