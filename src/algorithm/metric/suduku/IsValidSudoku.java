@@ -10,11 +10,14 @@ import java.util.Arrays;
 public class IsValidSudoku {
     public static class Solution {
         public boolean isValidSudoku(char[][] board) {
+
+            //important 只有一个 boolean array here
+            //important 但是每次都重新fill false 一边 这样就可以是减少内存使用
             boolean[] visited = new boolean[9];
 
             // row
             for (int i = 0; i < 9; i++) {
-                Arrays.fill(visited, false);
+                Arrays.fill(visited, false); // important Arrays.fill() method
                 for (int j = 0; j < 9; j++) {
                     if (!process(visited, board[i][j]))
                         return false;
@@ -50,6 +53,8 @@ public class IsValidSudoku {
             }
 
             int num = digit - '0';
+
+            // if visited 那么就给false 了
             if (num < 1 || num > 9 || visited[num - 1]) {
                 return false;
             }

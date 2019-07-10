@@ -1,4 +1,4 @@
-package src.algorithm.matric;
+package algorithm.metric;
 
 import java.util.LinkedList;
 import java.util.Queue;
@@ -55,6 +55,7 @@ public class MazeII { //important 这道题的关键在碰壁才变向
                 col -= dir[i + 1];
                 dis -= 1;
                 //notice 这个把刚才撞墙的点全部加了到queue 里面的点
+                // red  总结 matrix 题， 只把专项的点加到queue 里面去
                 queue.add(new Position(row, col, dis));
             }
 

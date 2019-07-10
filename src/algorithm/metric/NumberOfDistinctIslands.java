@@ -63,6 +63,15 @@ public class NumberOfDistinctIslands {
      * @param grid: a list of lists of integers
      * @return: return an integer, denote the number of distinct islands
      */
+
+    /*
+     * Steps:
+     * 0. Can be solved by BFS try it later
+     * 1. This question is solved by DFS, use recursion to find all neighbour. and get
+     * neighbour relative location to the original location
+     * 2. add to the list, the list is represent as the island
+     *
+     * */
     public int numberofDistinctIslands(int[][] grid) {
         // write your code here
 
@@ -87,9 +96,9 @@ public class NumberOfDistinctIslands {
         }
 //        for (List<GeoType> list : set) {
 //            for (GeoType geoType : list) {
-                // System.out.printf("x %d,y %d \n", geoType.x,geoType.y);
+        // System.out.printf("x %d,y %d \n", geoType.x,geoType.y);
 //            }
-            // System.out.println("====");
+        // System.out.println("====");
 //        }
         return set.size();
     }

@@ -11,7 +11,7 @@ public class MaxiumProductSubarray {
      * @return: an integer
      */
 
-    //note 其实就是不断 的成 然后判断 正负
+    //note 其实就是不断 的乘法 然后判断 正负
     public int maxProduct(int[] nums) {
         int[] max = new int[nums.length];
         int[] min = new int[nums.length];

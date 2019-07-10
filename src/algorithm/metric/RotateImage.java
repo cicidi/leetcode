@@ -18,13 +18,13 @@ public class RotateImage {
         // write your code here
 
         int length = matrix.length;
-        hFold(matrix, length);
+        yFold(matrix, length);
         xFold(matrix, length);
     }
 
-    public void hFold(int[][] matrix, int length) {
+    public void yFold(int[][] matrix, int length) {
         for (int row = 0; row < length; row++) {
-            for (int col = 0; col < length / 2; col++) {
+            for (int col = 0; col < length / 2; col++) { //notice 对折 length/2
                 int tmp = matrix[row][col];
                 matrix[row][col] = matrix[row][length - 1 - col];
                 matrix[row][length - 1 - col] = tmp;

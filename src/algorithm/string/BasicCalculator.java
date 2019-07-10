@@ -9,7 +9,7 @@ import java.util.Stack;
  */
 // notice  1+2-(34*56+18-12)  每一个括外之前的全部计算掉，然后和括号里面的一起在合并,合并之前要先看看看正负数
 // notice  1+2-(34*56+(18+2)*3-12)  每一个左侧括号要做4件事情 1，把之前的result 放到stack 里面， 2，把正负号记录到stack 里面，3，把result 清零， 4，正负号清零
-//  每一个右侧括号代表一个括号的结束，要做2件事情，第一第二 看正负数，第三 合并之前stack 里面的东西，第四清零当然number
+//  每一个右侧括号代表一个括号的结束，要做2件事情，第一第二 看正负数，第三 合并之前stack 里面的东西，第四清零当前number
 public class BasicCalculator {
     /**
      * @param s: the given expression
@@ -28,7 +28,6 @@ public class BasicCalculator {
             if (Character.isDigit(c)) {
                 num = num * 10 + c - '0';
             } else if (c == '+') {
-
                 result += sign * num; // sign* num
                 num = 0;
                 sign = 1;

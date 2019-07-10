@@ -91,6 +91,15 @@ public class WordSaerchII_Mine {
 
 }
 
+/*
+* Step
+* -. 如何做一个trie
+* 1. 又一个context root
+* 2 Trie 的结构式  Map<Character,Trie>
+* 3. 当进来一个单词，从一个字母开始，往上一层的trie  trie.map.get(char)->Trie if null create new
+* 4. 跟treeNode一样，node = node.next
+* */
+
 class TreeNode {
     Trie root = new Trie();
 
