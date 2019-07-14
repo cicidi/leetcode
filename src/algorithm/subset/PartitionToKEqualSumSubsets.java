@@ -29,7 +29,7 @@ public class PartitionToKEqualSumSubsets {
         if (sum % k != 0) {
             return false;
         }
-        Arrays.sort(nums);
+        Arrays.sort(nums);  // sort 的好处是先把大的数都处理掉了，
 
         return partition(nums, new int[k], length - 1, sum / k);
     }

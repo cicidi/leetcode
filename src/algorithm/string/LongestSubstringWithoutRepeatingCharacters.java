@@ -8,12 +8,18 @@ import java.util.Set;
  * Lintcode 384. Longest Substring Without Repeating Characters
  * url https://www.lintcode.com/problem/longest-substring-without-repeating-characters/my-submissions
  */
+
+/*
+* Steps 1 for loop start
+* Step 2  send for loop mark end
+* Step 3 hard a array as recorder 记录所有 的出现，超过一次直接结束，然后map 那个index 清空
+* */
 public class LongestSubstringWithoutRepeatingCharacters {
     /**
      * @param s: a string
      * @return: an integer
      */
-    //important 这道题用了一层for 加一层while loop 基本上就是求range 题
+    //important 这道题用了一层for 加一层while loop 基本上就是求range
     public int lengthOfLongestSubstring(String s) {
         int[] map = new int[256];
         int max = 0; // notice max start 0;
