@@ -1,14 +1,22 @@
 /*
- * important
  * notice
+ * important
+ * relative
+ * category
  * green
+ * yellow
+ * red
+ * orange
+ * blue
+ * brown
+ *
  * url
  * leetcode
  *
  * 分析
  * */
 
-public class Template {
+public class JavaTemplate {
 
     public static void main(String[] args) {
 //        String[] input = new String[]{

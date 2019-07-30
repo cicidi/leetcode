@@ -1,8 +1,8 @@
 package main
 
 import (
-	"algorithm/model"
 	"fmt"
+	"leetcode/algorithm/model"
 )
 
 /*
@@ -34,7 +34,7 @@ rotate 4 steps to the right: 2->0->1->NULL*/
 */
 func main() {
 	fmt.Println("vim-go")
-	node1 := model.ListNode{Val: 1}
+	node1 := model.ListNode{}
 	node2 := model.ListNode{Val: 2}
 	node3 := model.ListNode{Val: 3}
 	node4 := model.ListNode{Val: 4}

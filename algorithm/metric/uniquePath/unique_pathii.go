@@ -1,4 +1,4 @@
-package uniquePath
+package main
 
 import "fmt"
 
@@ -41,7 +41,7 @@ func uniquePathHelper(m int, n int, obstacleGrid [][]int) int {
 		return obstacleGrid[m][n]
 	} else if m == 0 || n == 0 { // important recursion 的结束条件 3
 		return 1
-	} else {  // important recursion 的开始句
+	} else { // important recursion 的开始句
 		obstacleGrid[m][n] = uniquePathHelper(m-1, n, obstacleGrid) + uniquePathHelper(m, n-1, obstacleGrid)
 		return obstacleGrid[m][n]
 	}
