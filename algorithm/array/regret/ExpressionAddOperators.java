@@ -1,4 +1,4 @@
-package algorithm;
+package array.regret;
 
 /*
  * important
@@ -6,8 +6,11 @@ package algorithm;
  * green
  * url
  * leetcode
+ * tag: 后悔算法
  *
- * Given a string that contains only digits 0-9 and a target value, return all possibilities to add binary operators (not unary) +, -, or * between the digits so they evaluate to the target value.
+ *
+282. Expression Add Operators
+Given a string that contains only digits 0-9 and a target value, return all possibilities to add binary operators (not unary) +, -, or * between the digits so they evaluate to the target value.
 
 Example 1:
 
@@ -29,8 +32,6 @@ Example 5:
 
 Input: num = "3456237490", target = 9191
 Output: []
- * 分析
- *
  * */
 
 import java.util.ArrayList;

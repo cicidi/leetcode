@@ -1,46 +1,54 @@
-package array.water;
+package array.twoPointer;
 
 /**
- * @author cicidi on 5/26/19
+ * @author cicidi on 2019-06-06
+ * Lintcode
+ * url
  */
 
-/*
- * tag
- * lintcode 363. Trapping Rain Water
- * https://www.lintcode.com/problem/trapping-rain-water/my-submissions
- */
-public class TrappingRainWater {
+// same question with trapping water 1  but need find largest  pool
+public class TrappingRainWater_Amazon {
     /**
      * @param heights: a list of integers
      * @return: a integer
      */
-    public int trapRainWater(int[] heights) {
-        // write your code here
+    public int maxTrapRainWater(int[] heights) {
         if (heights.length == 0) {
             return 0;
         }
+
         int leftIndex = 0;
         int rightIndex = heights.length - 1;
         int leftValue = heights[leftIndex];
         int rightValue = heights[rightIndex];
-        int sum = 0;
+
+        int leftSum = 0;
+        int rightSum = 0;
+        int max = 0;
+
         while (leftIndex < rightIndex) {
-            if (leftValue < rightValue) { //notice 从两边移动 谁小移动谁
+            if (leftValue < rightValue) {
                 leftIndex++;
-                if (leftValue > heights[leftIndex]) {
-                    sum += leftValue - heights[leftIndex];  //左边蓄的水进入到总数
+                if (leftValue < heights[leftIndex]) {
+                    leftSum += leftValue - heights[leftIndex];
                 } else {
                     leftValue = heights[leftIndex];
+                    max = Math.max(max, leftSum);
+                    leftSum = 0;
                 }
+
             } else {
                 rightIndex--;
                 if (rightValue > heights[rightIndex]) {
-                    sum += rightValue - heights[rightIndex];//右边虚的水进入到总数
+                    rightSum += rightValue - heights[rightIndex];
                 } else {
                     rightValue = heights[rightIndex];
+                    max = Math.max(max, rightSum);
+                    rightSum = 0;
                 }
             }
+
         }
-        return sum;
+        return max;
     }
 }

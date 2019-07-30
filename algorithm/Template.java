@@ -1,5 +1,3 @@
-package algorithm;
-
 /*
  * important
  * notice
