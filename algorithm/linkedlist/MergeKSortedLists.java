@@ -1,6 +1,6 @@
-package algorithm.linkedlist;
+package linkedlist;
 
-import algorithm.model.ListNode;
+import model.ListNode;
 
 import java.util.List;
 import java.util.PriorityQueue;

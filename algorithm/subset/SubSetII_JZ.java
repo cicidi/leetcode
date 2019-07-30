@@ -1,4 +1,4 @@
-package algorithm.subset;
+package subset;
 
 import java.util.ArrayList;
 import java.util.Arrays;

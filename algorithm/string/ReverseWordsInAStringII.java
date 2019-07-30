@@ -1,4 +1,4 @@
-package algorithm.string;
+package string;
 
 /**
  * @author cicidi on 5/26/19

@@ -1,4 +1,4 @@
-package algorithm.company.Square;
+package company.Square;
 
 public class RevertByteInAnInteger {
 

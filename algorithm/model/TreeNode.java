@@ -1,4 +1,4 @@
-package algorithm.model;
+package model;
 
 public class TreeNode {
     public int val;

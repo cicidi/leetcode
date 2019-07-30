@@ -1,4 +1,4 @@
-package algorithm.tree;
+package tree;
 
 /*
  * important
@@ -10,7 +10,7 @@ package algorithm.tree;
  * 分析
  * */
 
-import algorithm.model.TreeNode;
+import model.TreeNode;
 
 public class SameTree {
 

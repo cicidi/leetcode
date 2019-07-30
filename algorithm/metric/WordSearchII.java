@@ -1,4 +1,4 @@
-package algorithm.metric;
+package metric;
 
 import java.util.ArrayList;
 import java.util.List;

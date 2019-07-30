@@ -1,6 +1,6 @@
-package algorithm.tree;
+package tree;
 
-import algorithm.model.TreeNode;
+import model.TreeNode;
 
 import java.util.HashSet;
 import java.util.Set;

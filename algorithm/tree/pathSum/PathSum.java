@@ -1,6 +1,6 @@
-package algorithm.tree.pathSum;
+package tree.pathSum;
 
-import algorithm.model.TreeNode;
+import model.TreeNode;
 
 public class PathSum {
 

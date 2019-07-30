@@ -1,4 +1,4 @@
-package algorithm.leetcode.Q1_100;
+package leetcode.Q1_100;
 
 /*
 https://leetcode.com/problems/integer-to-roman/

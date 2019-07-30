@@ -1,4 +1,4 @@
-package algorithm.binary_search;
+package binary_search;
 
 /**
  * @author cicidi on 5/26/19

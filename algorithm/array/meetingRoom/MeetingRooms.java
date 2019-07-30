@@ -1,6 +1,6 @@
-package algorithm.array.meetingRoom;
+package array.meetingRoom;
 
-import algorithm.model.Interval;
+import model.Interval;
 
 import java.util.Collections;
 import java.util.Comparator;

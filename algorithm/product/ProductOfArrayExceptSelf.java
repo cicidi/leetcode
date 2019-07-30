@@ -1,4 +1,4 @@
-package algorithm.product;
+package product;
 
 /**
  * @author cicidi on 5/27/19

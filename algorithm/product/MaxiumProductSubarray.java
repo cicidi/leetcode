@@ -1,4 +1,4 @@
-package algorithm.product;
+package product;
 /*
   * tag
   * lintcode

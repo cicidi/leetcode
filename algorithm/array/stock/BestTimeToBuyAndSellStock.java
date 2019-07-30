@@ -1,4 +1,4 @@
-package algorithm.array.stock;
+package array.stock;
 
 /**
  * @author cicidi on 5/26/19

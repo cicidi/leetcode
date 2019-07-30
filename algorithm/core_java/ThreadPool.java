@@ -1,4 +1,4 @@
-package algorithm.core_java;
+package core_java;
 
 import java.util.concurrent.PriorityBlockingQueue;
 

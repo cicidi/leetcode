@@ -1,4 +1,4 @@
-package algorithm.heap;
+package heap;
 
 //important 这道题只能被
 //recite

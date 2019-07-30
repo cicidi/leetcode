@@ -1,4 +1,4 @@
-package algorithm.company.Square;
+package company.Square;
 
 
 /*
@@ -10,7 +10,7 @@ package algorithm.company.Square;
  *
  * 分析
  * notice 应该和比较两个树是一样的题
-   import algorithm.tree.SameTree;
+   import tree.SameTree;
  * */
 
 

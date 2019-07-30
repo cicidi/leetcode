@@ -1,11 +1,11 @@
-package algorithm.linkedlist;
+package linkedlist;
 /*
 * tag
 * leetcode 206. Reverse Linked List
 * https://leetcode.com/problems/reverse-linked-list/
 */
 
-import algorithm.model.ListNode;
+import model.ListNode;
 
 public class ReverseLinkedList {
     public static ListNode revert(ListNode node) {

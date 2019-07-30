@@ -1,4 +1,4 @@
-package algorithm.array.meetingRoom;
+package array.meetingRoom;
 
 import java.util.List;
 import java.util.PriorityQueue;

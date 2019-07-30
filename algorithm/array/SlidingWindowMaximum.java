@@ -1,4 +1,4 @@
-package algorithm.array;
+package array;
 
 import java.util.ArrayDeque;
 import java.util.ArrayList;

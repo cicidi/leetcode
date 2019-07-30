@@ -1,4 +1,4 @@
-package src.algorithm.matric;
+package src.matric;
 
 import java.util.ArrayList;
 import java.util.Arrays;

@@ -1,4 +1,4 @@
-package algorithm.dp;
+package dp;
 
 /*
  * important

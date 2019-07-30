@@ -1,4 +1,4 @@
-package algorithm.sum;
+package sum;
 
 import java.util.*;
 

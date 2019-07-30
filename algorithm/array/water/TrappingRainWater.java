@@ -1,4 +1,4 @@
-package algorithm.array.water;
+package array.water;
 
 /**
  * @author cicidi on 5/26/19

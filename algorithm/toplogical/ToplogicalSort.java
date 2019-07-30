@@ -1,4 +1,4 @@
-package algorithm.toplogical;
+package toplogical;
 
 import java.util.ArrayList;
 import java.util.List;

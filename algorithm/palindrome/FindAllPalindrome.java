@@ -1,4 +1,4 @@
-package algorithm.palindrome;
+package palindrome;
 
 import java.util.Collections;
 import java.util.HashSet;

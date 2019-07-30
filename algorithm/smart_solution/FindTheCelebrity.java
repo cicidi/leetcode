@@ -1,4 +1,4 @@
-package algorithm.smart_solution;
+package smart_solution;
 
 /*
   * tag

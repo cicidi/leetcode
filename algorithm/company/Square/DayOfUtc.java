@@ -1,4 +1,4 @@
-package algorithm.company.Square;
+package company.Square;
 
 public class DayOfUtc {
     public static void main(String[] args) {

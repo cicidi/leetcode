@@ -1,4 +1,4 @@
-package algorithm.smart_solution;
+package smart_solution;
 
 /**
  * @author cicidi on 5/27/19

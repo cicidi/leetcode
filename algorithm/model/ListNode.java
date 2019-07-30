@@ -1,4 +1,4 @@
-package algorithm.model;
+package model;
 
 /*
   * tag

@@ -1,6 +1,6 @@
-package algorithm.tree.traversal;
+package tree.traversal;
 
-import algorithm.model.TreeNode;
+import model.TreeNode;
 
 import java.util.ArrayList;
 import java.util.LinkedList;

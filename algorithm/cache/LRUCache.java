@@ -1,4 +1,4 @@
-package algorithm.cache;
+package cache;
 
 import java.util.HashMap;
 import java.util.Map;

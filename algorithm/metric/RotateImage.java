@@ -1,4 +1,4 @@
-package algorithm.metric;
+package metric;
 
 /**
  * @author cicidi on 5/26/19

@@ -1,4 +1,4 @@
-package algorithm.map;
+package map;
 
 import java.util.ArrayList;
 import java.util.HashMap;

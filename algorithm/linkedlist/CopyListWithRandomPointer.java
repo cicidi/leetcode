@@ -1,4 +1,4 @@
-package algorithm.linkedlist;
+package linkedlist;
 
 /**
  * @author cicidi on 5/26/19

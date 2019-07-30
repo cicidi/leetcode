@@ -1,4 +1,4 @@
-package algorithm.map;
+package map;
 
 public class HashMap<K, V> {
 

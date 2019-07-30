@@ -1,4 +1,4 @@
-package algorithm.binary_search;
+package binary_search;
 
 /*
  * tag

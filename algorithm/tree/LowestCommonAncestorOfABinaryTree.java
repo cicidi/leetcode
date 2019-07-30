@@ -1,4 +1,4 @@
-package algorithm.tree;
+package tree;
 
 /**
  * @author cicidi on 5/26/19

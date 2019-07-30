@@ -1,4 +1,4 @@
-package algorithm.model;
+package model;
 
 /**
  * @author cicidi on 5/26/19

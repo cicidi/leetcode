@@ -1,6 +1,6 @@
-package algorithm.tree;
+package tree;
 
-import algorithm.model.TreeNode;
+import model.TreeNode;
 
 /*
  * tag

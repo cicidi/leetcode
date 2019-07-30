@@ -1,4 +1,4 @@
-package algorithm.array;
+package array;
 
 /*
  * important

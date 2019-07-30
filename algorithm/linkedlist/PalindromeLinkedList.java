@@ -1,6 +1,6 @@
-package algorithm.linkedlist;
+package linkedlist;
 
-import algorithm.model.ListNode;
+import model.ListNode;
 
 /**
  * @author cicidi on 5/26/19
