@@ -54,10 +54,10 @@ public class MergeKSortedLists {
     }
 
     public ListNode merge2Node(ListNode a, ListNode b) {
-        ListNode dummy = new ListNode(0);
+        ListNode dummy = new ListNode(0);  // notice  先创建一个dummy 为输出dummy.next 做准备
         ListNode tail = dummy;
 
-        while (a != null && b != null) {
+        while (a != null && b != null) {  // notice 这里要写while
             if (a.val <= b.val) {
                 tail.next = a;
                 a = a.next;
@@ -67,7 +67,7 @@ public class MergeKSortedLists {
             }
             tail = tail.next;
         }
-        if (a != null) {
+        if (a != null) {    // notice 这里只有一个 if null check
             tail.next = a;
         }
         if (b != null) {

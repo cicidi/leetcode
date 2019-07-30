@@ -45,13 +45,13 @@ public class ShortestDistanceFromAllBuildings_PRACTICE {
                     queue.offer(new int[]{i, j});
                     while (!queue.isEmpty()) {
                         int size = queue.size();
-                        for (int k = 0; k < size; k++) {  // 这个for loop 第一次做忘记了，这个非常重要，不然dis算不对
+                        for (int k = 0; k < size; k++) {  //important  这个for loop 第一次做忘记了，这个非常重要，不然dis算不对
                             int[] current = queue.poll();
-                            //这个地方搞了一个null pointer 因为for loop 的k 没有++ 我写成-- 了
+                            //notice 这个地方搞了一个null pointer 因为for loop 的k 没有++ 我写成-- 了
 
                             int x = current[0];
                             int y = current[1];
-                            distance[x][y] += dis;  // 这里我之前写成 distance[i][j]  and canReach[i][j] 了 , distance 的这句话必须在 move direction 的外面
+                            distance[x][y] += dis;  // notice 这里我之前写成 distance[i][j]  and canReach[i][j] 了 , distance 的这句话必须在 move direction 的外面
                             canReach[x][y] += 1;
                             for (int dir = 0; dir < 4; dir++) {
                                 int xOffset = dirX[dir];

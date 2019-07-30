@@ -11,6 +11,13 @@ import algorithm.model.ListNode;
   * lintcode 223. Palindrome Linked List
   * https://www.lintcode.com/problem/palindrome-linked-list/description
   */
+
+/*
+steps
+1 make a copy  每一个new 都要新的memory
+2。 reverse node  revert 同时拿到 size
+3。 start 和end for loop 跑size 的一半 就够了
+* */
 public class PalindromeLinkedList {
     /**
      * @param head: A ListNode.

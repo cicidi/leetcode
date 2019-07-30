@@ -63,7 +63,7 @@ public class ToplogicalSort {
         Queue<Integer> queue = new PriorityQueue<>();
         for (int index = 0; index < V; index++) {
             if (indegree[index] == 0) {
-                queue.offer(index); // notice 把所有入读位零的index 先加到q 里面
+                queue.offer(index); // notice 把所有入度为0的index 先加到q 里面
             }
         }
         int count = 0;

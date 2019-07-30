@@ -4,7 +4,16 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-
+/*
+* map  value -> index
+* array index value
+* insert add
+* getRandom generate random value and get
+* remove
+*   - use map get(Value) -> index
+*   - replace A[index] with A[last]
+*   - remove last
+* */
 class InsertDeleteGetRandomO1 {
 
     Map<Integer, Integer> map = new HashMap<>();

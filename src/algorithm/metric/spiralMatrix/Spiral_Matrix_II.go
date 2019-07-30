@@ -7,7 +7,10 @@ import "fmt"
 * leetcode 59. Spiral Matrix II 892. Alien Dictionary
 * https://leetcode.com/problems/spiral-matrix-ii/
  */
-
+/* 1. 先把边界画出来
+2. 然后开始转圈圈，每次把已经跑完的row， 或者col 的那个边界的值 -1 或+1 这样范围就缩小了
+3。 一直赚到不能转圈圈
+*/
 func generateMatrix(n int) [][]int {
 	number := 0
 	columnStart := 0

@@ -30,6 +30,12 @@ import java.util.PriorityQueue;
  * Challenge
  * O*(klogn*) time, n is the maximum of the width and height of the matrix.
  */
+
+/*
+1 .has to use bfs in the quesiton
+2. 首先从最小的开始
+3。 然后往右，往下走， 并把两个数放到priority queue 里面，排完续 扔出来
+* */
 public class KthSmallestNumberInSortedMatrix {
     /**
      * @param matrix: a matrix of integers
