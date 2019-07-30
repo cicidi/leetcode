@@ -43,13 +43,35 @@
  */
 package main
 
+/*
+ * notice
+ * important
+ * relative
+ * category
+ * green
+ * yellow
+ * red
+ * orange
+ * blue
+ * brown
+ *
+ * url
+ * leetcode
+ *
+ * 分析
+ * */
+
+func main() {
+
+}
+
 func numDecodings(s string) int {
 	return 0
 }
 
 // ol -> original length
-func createChildren(ol int, current []string, l int) ([][]string, bool) {
-	if ol-l*2 < 2 {
+func createChildren(originLength int, current []string, l int) ([][]string, bool) {
+	if originLength-l*2 < 2 {
 		return nil, false
 	}
 	var children [][]string
