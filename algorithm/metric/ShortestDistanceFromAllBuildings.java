@@ -135,7 +135,8 @@ public class ShortestDistanceFromAllBuildings {
                         if (!isValid(rr, cc, visited, grid, rows, cols)) {
                             continue;
                         }
-                        visited[rr][cc] = true;
+                        visited[rr][cc] = true;  // visited 起始就是一张地图，标记了从某个building 出来以后
+                        // 到任何位置的最短距离
                         q.offer(new int[]{rr, cc});
                     }
                 }

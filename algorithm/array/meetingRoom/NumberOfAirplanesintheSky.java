@@ -19,8 +19,6 @@ public class NumberOfAirplanesintheSky {
         if (airplanes == null || airplanes.size() == 0) {
             return 0;
         }
-        if (airplanes.get(0).start == 23 && airplanes.get(0).end == 27 && airplanes.size() == 70)
-            return 7;
         PriorityQueue<Activity> queue = new PriorityQueue<Activity>((x, y) -> {
             if (x.time == y.time) {
                 return x.takeOff - y.takeOff;
@@ -42,6 +40,7 @@ public class NumberOfAirplanesintheSky {
             if (a.time > 90) {
                 System.out.printf("time %d takeOff %d max %d \n", a.time, a.takeOff, max);
                 System.out.printf("size %d \n", airplanes.size());
+
             }
         }
         return max;

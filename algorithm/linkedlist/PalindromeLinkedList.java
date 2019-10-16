@@ -62,6 +62,7 @@ public class PalindromeLinkedList {
         return new ResultType(prev, size);
     }
 
+    //  deep copy  创建新的object
     public ListNode clone(ListNode node) {
         ListNode copy = new ListNode(node.val);
         ListNode current = copy;

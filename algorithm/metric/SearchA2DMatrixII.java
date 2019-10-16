@@ -11,7 +11,7 @@ package metric;
  */
 /*
 * Step1
-* 1. 这道题是seach 某个target 所以直接从坐下就可以了
+* 1. 这道题是search 某个target 所以直接从左下就可以了
 * 2. 另外这个是求出现次数，所得有一个while loop 一直进行下去
 * 2. 前面又一个KthSmallestNumberInSortedMatrix 这个就需要priority Q 了
 * 3. 回头这道题，从左下开始找

@@ -54,7 +54,7 @@ func rotateRight(head *model.ListNode, k int) *model.ListNode {
 		return head
 	}
 	size := getSize(head)
-	k = k % size
+	k = k % size // question 为什么这里用余数  貌似直接减法就可以了把
 	var dummy = model.ListNode{Val: 0}
 	dummy.Next = head
 	var current = head
@@ -66,7 +66,7 @@ func rotateRight(head *model.ListNode, k int) *model.ListNode {
 
 	var moveNode = dummy.Next
 	for i := 0; i < size-k-1; i++ {
-		moveNode = moveNode.Next
+		moveNode = moveNode.Nex
 	}
 	result := moveNode.Next
 	moveNode.Next = nil

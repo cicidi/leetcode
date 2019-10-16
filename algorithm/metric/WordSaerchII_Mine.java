@@ -29,9 +29,13 @@ public class WordSaerchII_Mine {
                 {'i', 'f', 'l', 'v'}
 
         };
-        String[] words = new String[]{"oath", "pea", "eat", "rain"};
+        String[] words = new String[]{"oath", "oathf", "pea", "eat", "rain"};
         WordSaerchII_Mine wordSearchIIJz = new WordSaerchII_Mine();
         List<String> res = wordSearchIIJz.wordSearchII(board, Arrays.asList(words));
+
+        for (String str : res) {
+            System.out.println(str);
+        }
         System.out.println("done");
     }
 
@@ -60,13 +64,17 @@ public class WordSaerchII_Mine {
             return;
         }
         trie = trie.children.get(board[row][col]);
+        // 这句话刚才我有个疑惑，不过已经解决了，就是日入oath 和 oathf 这两个单词怎么能保证
+        //在metric 里面被找到
+        // 因为我忘记了一件事情， 这个trie 也就是字库，是通过当前有的word 的备选candidate 创建出来的
+        // 为不是根据metric 有什么单词，然后有什么组合 去创建出来的
         if (trie.word != null) {
             if (!result.contains(trie.word)) {
                 result.add(trie.word);
             }
         }
         char tmp = board[row][col];
-        board[row][col] = 0;
+        board[row][col] = 0;// 通过修改 board[row][col]当前值，把当前表示为不available，表示已经visited
         if (row - 1 >= 0) {
             search(board, trie, row - 1, col, result);
         }
@@ -92,13 +100,13 @@ public class WordSaerchII_Mine {
 }
 
 /*
-* Step
-* -. 如何做一个trie
-* 1. 又一个context root
-* 2 Trie 的结构式  Map<Character,Trie>
-* 3. 当进来一个单词，从一个字母开始，往上一层的trie  trie.map.get(char)->Trie if null create new
-* 4. 跟treeNode一样，node = node.next
-* */
+ * Step
+ * -. 如何做一个trie
+ * 1. 又一个context root
+ * 2 Trie 的结构式  Map<Character,Trie>
+ * 3. 当进来一个单词，从一个字母开始，往上一层的trie  trie.map.get(char)->Trie if null create new
+ * 4. 跟treeNode一样，node = node.next
+ * */
 
 class TreeNode {
     Trie root = new Trie();

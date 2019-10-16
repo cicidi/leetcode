@@ -11,7 +11,7 @@ import java.util.Map;
  * url
 
 
-    这道题三个方法
+    这道题三个method
     movetail
        给current 换位置要做几件事情
        1.找到current
@@ -45,7 +45,8 @@ import java.util.Map;
 public class LRUCache {
     private int capacity, size;
     // 4.0.1  who is dummy and then to use dummy
-    // dummy 和tail 都是在一开始创建，dummy是整个数据的结构的prev，tail 代表被更新的node
+    // dummy 和tail 都是在一开始创建，dummy是整个数据的结构的prev.
+    // tail 代表被更新的node
     private ListNode dummy, tail;
     private Map<Integer, ListNode> keyToPrev;
 
@@ -108,7 +109,7 @@ public class LRUCache {
                 size++;
             } else {
                 // 4.2 size not enough  remove firstNode
-                // 4.2.1 whois the first   ->  dummy
+                // 4.2.1 who is the first   ->  dummy
                 ListNode first = dummy.next;
 
                 //4.2.3  remove first.key

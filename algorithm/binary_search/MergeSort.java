@@ -29,14 +29,19 @@ public class MergeSort {
 
         int[] left = new int[mid];   //notice 这里面从中间把左边，右边分别创建了不同的新的array
         int[] right = new int[k - mid];
-        setValue(A, left, 0, mid);  //notice 正式因为前面是新建的array 我们这里才可以从0， 开始，
+        setValue(A, left, 0, mid);  //notice 正式因为前面是新建的array 我们这里才可以从index  0， 开始，
         setValue(A, right, mid, k);
         mergeSort(left, left.length);
         mergeSort(right, right.length);
-        merge(A, left, right, left.length, right.length); // notice 第一次的merge 两边分别只有一个element
+        merge(A, left, right, left.length, right.length); // notice recursion 到底部，真正的第一次的merge 两边分别只有一个element
 
     }
 
+    // merge 的方法 有两步
+    // 1。 从两个array 分别拿出第一个进行对比
+    // 2。 那个小，把哪一个的当前element拿出来
+    // 3。 index ++
+    // 4. 最后如果某一个array 全部走完了，把另一个array的尾巴全部注入进来
     private static void merge(int[] A, int[] left, int[] right, int leftLength, int rightLength) {
         int l = 0, r = 0, index = 0;
         while (l < leftLength && r < rightLength) {
@@ -54,6 +59,7 @@ public class MergeSort {
         }
     }
 
+    // create new array from start to end
     public static void setValue(int[] A, int[] SUB, int start, int end) {
         for (int i = start; i < end; i++) {
             SUB[i - start] = A[i];  // notice 这个地方比较巧妙

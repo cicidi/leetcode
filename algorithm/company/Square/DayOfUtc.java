@@ -14,7 +14,8 @@ public class DayOfUtc {
         public int getDay(int today) {
             long rem = current % weekValueOfDay;
             if (rem == 0) return today;
-            if (rem % longValueOfDay == 0) return (int) (today - rem / longValueOfDay);
+            if (rem % longValueOfDay == 0)
+                return (int) (today - rem / longValueOfDay);
             else return (int) (today - rem / longValueOfDay);
         }
     }

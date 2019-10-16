@@ -21,7 +21,7 @@ public class CopyListWithRandomPointer {
             return null;
         }
         copyNextNode(head);
-        copyRanadomNode(head);
+        copyRandomNode(head);
         RandomListNode newNode = splitNode(head);
         return newNode;
     }
@@ -38,11 +38,17 @@ public class CopyListWithRandomPointer {
         }
     }
 
-    public void copyRanadomNode(RandomListNode head) {
+    public void copyRandomNode(RandomListNode head) {
         while (head != null) {
             // check head.next.random is null here
             if (head.next.random != null) {
-                head.next.random = head.random.next;
+                // - question I think this if statement might be wrong. - 1st oct 2019
+                //      - I checked this line has no problem - 2nd oct 2019
+                //      - Because this method is copying the random node. So should check the random node of
+                //      the node which next to current, is not null and go ahead
+                head.next.random = head.random.next;// question how can i gurentee
+                // head.random is not null?
+                // head.next is not null?
             }
             head = head.next.next;
         }
@@ -50,14 +56,19 @@ public class CopyListWithRandomPointer {
     }
 
     // copy 1->1'->2->2'->3->3'
+    // 这是比较经典的一个方程，如何像拉链一样撕开linked list
+    // 第一步， 新建一个要被返回的newNode， 这个node 也是一个head
+    // 第二部， 取出第3个node，把这个node 加到前面的Node 后面去
+    // 第三部， 让第2个node的next 等于 第四个node
+    // 第四部， 让第一个变成他的下一次，起始已经是第三个node开始了
     public RandomListNode splitNode(RandomListNode head) {
         RandomListNode newNode = head.next;
         while (head != null) {
-            RandomListNode tmp = head.next;
-            head.next = tmp.next;
-            if (tmp.next != null) {
-                //这里落了tmp
-                tmp.next = tmp.next.next;
+            RandomListNode random = head.next;
+            head.next = random.next;
+            //我做这道题的时候，这里落了split random 的部分
+            if (random.next != null) {
+                random.next = random.next.next;
             }
             head = head.next;
         }

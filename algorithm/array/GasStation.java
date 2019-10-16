@@ -30,7 +30,10 @@ public class GasStation {
 //                "wrt", "wrf", "er", "ett", "rftt"
 //        };
         Solution s = new Solution();
-        System.out.println();
+        int[] gas = {1, 2, 3, 4, 5};
+        int[] cost = {3, 4, 5, 1, 2};
+        int out = s.canCompleteCircuit(gas, cost);
+        System.out.println(out);
     }
 
     static class Solution {

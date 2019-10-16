@@ -41,7 +41,6 @@
 //      fast		^
 //      current 	A
 //      match		1  2 3
-//      minLength      6    8
 //      start
 //   */
 //

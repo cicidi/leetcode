@@ -20,7 +20,7 @@ public class FindTheCelebrity {
         for (int i = 1; i < n; i++) {
             if (knows(ans, i)) {
                 // important 这句话比较难想： 这样一直走下去，最后只有大家都认识的人才会 被放在answer 里面 但是最后是不是 名人， 还需要检验一遍
-                ans = i;
+                ans = i;// 肯定只有celebrity才能通过这次筛选
             }
         }
 

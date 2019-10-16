@@ -52,7 +52,7 @@ public class TopKFrequentWords {
         int indexOfQ = 0;
         int index = 0;
         while (!queue.isEmpty() && index < k) {
-            if (indexOfQ >= queue.size() - k) {
+            if (indexOfQ >= queue.size() - k) { //question 为什么要加 index 0 这里好像错了，因为每次取了一个entry以后 需要的k也在变小
                 arr[index] = queue.remove().getKey();
                 index++;
             }

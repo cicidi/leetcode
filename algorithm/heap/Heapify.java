@@ -25,7 +25,8 @@ public class Heapify {
             scanFromMidToLeft(A, i);
         }
     }
-
+    // question 感觉这道题不光是要把 Ai 和Ai*2+2 Ai*2+2 的关系找出来，而且还得是按照
+    // 大小顺序 一次重新排列出来  需要重新找一下这道题
     public void scanFromMidToLeft(int[] A, int selected) {
         int length = A.length;
         while (selected < length) {
@@ -46,7 +47,7 @@ public class Heapify {
             int tmp = A[smallest];
             A[smallest] = A[selected];
             A[selected] = tmp;
-            //notice 交换玩以后再另select 等于smallest
+            //notice 交换玩以后再让select 等于smallest
             selected = smallest;
         }
     }
