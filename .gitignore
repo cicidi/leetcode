@@ -18,3 +18,7 @@
 **/*.swo
 **/out/**
 
+algorithm/tmp/*
+leetcode_question/811.subdomain-visit-count.txt
+"\351\235\242\347\273\217/"
+
