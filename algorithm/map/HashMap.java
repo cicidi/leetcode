@@ -21,14 +21,11 @@ public class HashMap<K, V> {
     }
 
 
-    // 1 quesiton data structer to use
+    // 1 question data structure to use
     //
     // 2 question  functions
     //
-    // 3 any performance concern  time complicty
-    //
-    //
-    //
+    // 3 any performance concern  time complicity
     //
 
     // DEFAULT_INITIAL_CAPACITY = 16
@@ -46,14 +43,14 @@ public class HashMap<K, V> {
     public V put(K key, V value) {
         //  figure out where to add
         //
-        //  get the bucket which contacins
+        //  get the bucket which contains the entry
         //
         //  take the entry from bucket
         //
         //  if the k exist  replace it
         //
-        //  if not  append new object to it.
-        //
+        //  if not, create new entry, append old entry to the new entry,
+        //  add new entry in the table
         //
 
 
@@ -80,7 +77,9 @@ public class HashMap<K, V> {
                 return old;
             }
         }
-
+        /*(green) if k not exist , then cannot found in the previous for loop,
+            then create new entry here, table [index] would be the new entry, old
+            entry append to new Entry*/
         Entry<K, V> e = table[index];
         table[index] = new Entry<>(key, value, hash, e);
         return null;

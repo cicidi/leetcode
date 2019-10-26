@@ -86,11 +86,14 @@ public class NumberOfDistinctIslands {
         for (int x = 0; x < col; x++) {
             for (int y = 0; y < row; y++) {
                 if (visited[y][x] != 1) {
-                    List list = new ArrayList<GeoType>();
-                    traverse(x, y, row, col, x, y, list, visited, grid);
-                    Collections.sort(list, sorter);
-                    if (list.size() != 0)
-                        set.add(list);
+                    // question 这个地方是不是还应该加上grid[x][y]==1
+                    // 因为没有必要起点在0的位置开始走一遍
+                    // notice 测试过了，确实应该应该家grid[y][x]==1  这里x 代表纵轴 row x 代表横轴
+                    List islands = new ArrayList<GeoType>();
+                    traverse(x, y, row, col, x, y, islands, visited, grid);
+                    Collections.sort(islands, sorter);
+                    if (islands.size() != 0)
+                        set.add(islands);
                 }
             }
         }
@@ -108,6 +111,10 @@ public class NumberOfDistinctIslands {
             return list;
         }
         visited[y][x] = 1;
+        // important 这里要用x-x_original
+        //  因为是求不同的形状， 要把岛上每个点相对于原来的点相对位置保留并对比，
+        //  如果不用original，那么在不同位置但是形状相同的岛就这个case 就不适用了
+
         list.add(new GeoType(x - x_o, y - y_o));
         traverse(x + 1, y, row, col, x_o, y_o, list, visited, grid);
         traverse(x, y + 1, row, col, x_o, y_o, list, visited, grid);

@@ -36,26 +36,26 @@ public class ToplogicalSort {
     }
 
     int V;
-    List<Integer>[] adj;
+    List<Integer>[] edge;
 
     public ToplogicalSort(int V) {
         this.V = V;
         // notice 用一个array 就能够表现一个edge 关系， index 是from， 值是出去，
-        adj = (ArrayList<Integer>[]) new ArrayList[V];
+        edge = (ArrayList<Integer>[]) new ArrayList[V];
         for (int i = 0; i < V; i++) {
-            adj[i] = new ArrayList<>();
+            edge[i] = new ArrayList<>();
         }
     }
 
     public void addEdge(int from, int to) {
-        adj[from].add(to);
+        edge[from].add(to);
     }
 
     public void toplogicalSort() {
         int[] indegree = new int[V];
         for (int i = 0; i < V; i++) {
             // notice 用一个arrayList 就可以表示入度
-            List<Integer> toVertexList = adj[i];
+            List<Integer> toVertexList = edge[i];
             for (int toVertex : toVertexList) {
                 indegree[toVertex]++;
             }
@@ -75,7 +75,7 @@ public class ToplogicalSort {
             //notice 遍历这个入读位0 的node edge  把他的toNode 找出来， 那个node 的入度找出来-1
             // 如果等于零，加到queue 里面去
             // important 不要直接加到结果集里面去
-            for (int toVertex : adj[vertex]) {
+            for (int toVertex : edge[vertex]) {
 
                 indegree[toVertex] -= 1;
                 if (indegree[toVertex] == 0) {

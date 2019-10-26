@@ -5,7 +5,7 @@ import java.util.Queue;
 
 public class MazeII { //important 这道题的关键在碰壁才变向
 
-    //notice  这里还有一个死循环的为题，也要cover 了
+    //notice  这里还有一个死循环的问题，也要cover 了
     // [
     // [0,0,1,0,0],
     // [0,0,0,0,0],
@@ -44,7 +44,10 @@ public class MazeII { //important 这道题的关键在碰壁才变向
                 int col = pos.col;
                 int dis = pos.dis;
 
-                // important 用while loop 一个方向走到头
+                //important
+                // 用while loop 一个方向走到头
+                // 为什么要一个方向走到头呢？而不是在每一个点分四个方向走，因为很多其他的题就是在每一个点分四个方向走
+                // 原因是这道题目有个前提是碰壁才变相
                 while (row >= 0 && row < rowLength && col >= 0 && col < colLength && maze[row][col] == 0) {
                     row += dir[i];
                     col += dir[i + 1];

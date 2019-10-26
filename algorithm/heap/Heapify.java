@@ -3,11 +3,31 @@ package heap;
 //important 这道题只能被
 //recite
 /*
-* Given an integer array, heapify it into a min-heap array.For a heap array A, A[0] is the root of heap,
-* and for each A[i], A[i * 2 + 1] is the left child of A[i] and A[i * 2 + 2] is the right child of A[i].
-* 给出一个整数数组，堆化操作就是把它变成一个最小堆数组。对于堆数组A，A[0]是堆的根，并对于每个A[i]，
-* A [i * 2 + 1]是A[i]的左儿子并且A[i * 2 + 2]是A[i]的右儿子。
+ * Given an integer array, heapify it into a min-heap array.For a heap array A, A[0] is the root of heap,
+ * and for each A[i], A[i * 2 + 1] is the left child of A[i] and A[i * 2 + 2] is the right child of A[i].
+ * 给出一个整数数组，堆化操作就是把它变成一个最小堆数组。对于堆数组A，A[0]是堆的根，并对于每个A[i]，
+ * A [i * 2 + 1]是A[i]的左儿子并且A[i * 2 + 2]是A[i]的右儿子。
 
+ * */
+
+/*
+* 分析  最后得出来的array 并不是order 的 他只是满足min heap 的要求
+*
+0	1	2	3	4	5	6	7	8	9
+1	3	4	12	7	9	8	6	5	2
+				^
+1	3	4	12	2	9	8	6	5	7
+				^
+1	3	4	5	2	9	8	6	12	7
+			^
+1	3	4	5	2	9	8	6	12	7
+		^
+1	3	4	5	2	9	8	6	12	7
+	^
+1	3	4	5	2	9	8	6	12	7
+	^
+1	3	4	5	2	9	8	6	12	7
+^
 * */
 public class Heapify {
     /*
@@ -25,6 +45,7 @@ public class Heapify {
             scanFromMidToLeft(A, i);
         }
     }
+
     // question 感觉这道题不光是要把 Ai 和Ai*2+2 Ai*2+2 的关系找出来，而且还得是按照
     // 大小顺序 一次重新排列出来  需要重新找一下这道题
     public void scanFromMidToLeft(int[] A, int selected) {
@@ -32,7 +53,7 @@ public class Heapify {
         while (selected < length) {
             //notice 另smallest 等于当前选择
             int smallest = selected;
-            //notice 在selected 和 select*2+!  select*2+2 中间找一个 最小的
+            //notice 在selected 和 select*2+1  select*2+2 中间找一个 最小的
             if (selected * 2 + 1 < length && A[smallest] > A[selected * 2 + 1]) {
                 smallest = selected * 2 + 1;
             }
