@@ -50,7 +50,6 @@ import model.TreeNode;
 public class ConstructBinaryTreeFromString {
     static class Solution {
         public TreeNode convert(String s) {
-
             if (s == null || s.length() == 0) {
                 return null;
             }
