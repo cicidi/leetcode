@@ -40,6 +40,12 @@ public class PredictTheWinner {
         System.out.println();
     }
 
+    // 1,3,2,5,2,3,5,6,7
+
+    // 1  ->   (3,2,5,7)
+    //          (3,2,5)  <-  7
+    // 3    ->   (2,5)
+    //              2     <- 5
     static class Solution {
 
         public boolean PredictTheWinner(int[] nums) {
