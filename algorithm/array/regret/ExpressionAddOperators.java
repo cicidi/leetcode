@@ -42,9 +42,6 @@ import java.util.Stack;
 public class ExpressionAddOperators {
 
     public static void main(String[] args) {
-//        String[] input = new String[]{
-//                "wrt", "wrf", "er", "ett", "rftt"
-//        };
         Solution s = new Solution();
 
         List<String> result = s.addOperators("105", 5);

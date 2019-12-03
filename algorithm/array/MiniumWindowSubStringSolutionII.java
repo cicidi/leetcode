@@ -25,67 +25,68 @@
 //        System.out.println(soultion.minWindow(s, t));
 //    }
 //
-//    static class Solution {
-//        ADOBECODEBANC
-//
-//                ABC
-//
+////    static class Solution {
+////        ADOBECODEBANC
+////
+////                ABC
 //
 //
 //        public class Solution {
 //
-//            public static void mamin(String[] args){
-//                int start=0;
-//                int end=0;
+//            public static void mamin(String[] args) {
+//                int start = 0;
+//                int end = 0;
 //
 //                int minSize;
-//                Map<Character,Integer> map=getCount(target);
+//                Map<Character, Integer> map = getCount(target);
 //                int length = t.length;
-//                boolen moveEnd=true;
-//                while end < length && start==end{ // at some condition
+//                boolen moveEnd = true;
+//                while end<length &&start == end { // at some condition
 //
 //                    c = t.charAt(i)
 //                    if map.keySet.contains(c)
-//                    if (moveEnd){
+//                    if (moveEnd) {
 //                        minusOne(C)
-//                    }else{
+//                    } else {
 //                        plusOne(c)
 //                    }
-//                    if (allLessThenZero||end=length-1){
-//                        moveEnd=false;
-//                        if (allLessThenZero){
-//                            size=min(size,end-start+1)
+//                    if (allLessThenZero || end = length - 1) {
+//                        moveEnd = false;
+//                        if (allLessThenZero) {
+//                            size = min(size, end - start + 1)
 //                        }
 //                    }
-//                    if(start== end){
+//                    if (start == end) {
 //                        moveEnd = true;
 //                    }
-//                    if(moveEnd){
+//                    if (moveEnd) {
 //                        end++;
-//                    }
-//                    else{
+//                    } else {
 //                        start++;
 //                    }
 //                }
 //            }
 //
-//            public Map<Character,Integer> getCount(){
+//            public Map<Character, Integer> getCount() {
 //                // TBD get the count of each char
 //                return map;
 //            }
 //
-//            public void plusOne(Char c){
+//            public void plusOne(Char c) {
 //
 //            }
 //
-//            public void minusOne(Char c){
+//            public void minusOne(Char c) {
 //
 //            }
 //
-//            public true allZero(){
-//                return true/false // check if all value <0
+//            public true
+//
+//            allZero() {
+//                return true / false // check if all value <0
 //            }
 //        }
+//
 //        Map<Character, Integer> convertToMap(String target) {
 //            Map<Character, Integer> map = new HashMap<>();
 //            for (char c : target.toCharArray()) {

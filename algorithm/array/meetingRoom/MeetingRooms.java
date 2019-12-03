@@ -18,8 +18,6 @@ public class MeetingRooms {
      * @return: if a person could attend all meetings
      */
     public boolean canAttendMeetings(List<Interval> intervals) {
-        // Write your code here
-
         if (intervals == null || intervals.size() == 0) {
             return true;
         }
