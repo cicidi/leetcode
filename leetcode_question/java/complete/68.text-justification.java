@@ -74,8 +74,8 @@
  * 
  * Input:
  * words =
- * ["Science","is","what","we","understand","well","enough","to","explain",
- * "to","a","computer.","Art","is","everything","else","we","do"]
+ * ["science","is","what","we","understand","well","enough","to","explain",
+ * "to","a","computer.","art","is","everything","else","we","do"]
  * maxWidth = 20
  * Output:
  * [
@@ -89,8 +89,56 @@
  * 
  * 
  */
-class Solution {
+class TestJustification{
     public List<String> fullJustify(String[] words, int maxWidth) {
-        
+        List<String> result = new ArrayList<>();
+        for (int i = 0; i < words.length;){
+            int start = i;
+            int end = i; 
+            int size = 0;
+            int space = 0;
+            int aSpace = 0;
+            int lastSpace = 0;
+            while (i < words.length && total + words[i] <= maxWidth){
+               end = i;
+               total += words[i].length();
+               i++;
+            }
+            i -- ;
+            space = maxWidth - total;
+            if (i != word.length -1){
+                lastSpace = total % (end - i);
+                aSpace = total / (start - end - 1);
+            }else{
+                aSpace = total / (start - end);
+            }
+            result.add(createString(words, start, end,aSpace,lastSpace));
+        }
+        return result;
+    }
+    public String createString(String[] words, int start, int end, int aSpace, int lastSpace){
+        StringBuilder sb = new StringBuilder();
+        for (int i = start; i < end; i++){
+            sb.append(words[i]);
+            if (i = end - 2){
+                sb.append(createSpace(lastSpace));
+            }else if (i < end - 2 ){
+                sb.append(createSpace(aSpace));
+            }
+        }
+        return sb.toString();
+    }
+
+    public String createSpace(int n){
+        StringBuilder sb = new StringBuilder(); 
+        for (int i = 0; i < n; i++){
+            sb.append(" ");
+        }
+        return sb.toString(); 
+    
+    }
+ 
+    public static void main(String[] args){
+        String[] arr = new String[]{"This", "is", "an", "example", "of", "text", "justification."};
     }
 }

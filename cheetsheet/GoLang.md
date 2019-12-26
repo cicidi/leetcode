@@ -757,3 +757,7 @@ Sort comparator
 
 ```
 
+Sync errors
+1: 
+ cannot use append(*finalResult, arr) (type [][]int) as type *[][]int in assignment
+ Ans : don't use pointer here

@@ -17,7 +17,7 @@ func generateMatrix(n int) [][]int {
 	columnEnd := n - 1
 	rowStart := 0
 	rowEnd := n - 1
-	matric := make([][]int, n)
+	var matric [][]int
 	for i := range matric {
 		matric[i] = make([]int, n)
 	}
