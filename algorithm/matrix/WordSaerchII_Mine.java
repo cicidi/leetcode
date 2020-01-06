@@ -65,9 +65,19 @@ public class WordSaerchII_Mine {
         }
         trie = trie.children.get(board[row][col]);
         // 这句话刚才我有个疑惑，不过已经解决了，就是日入oath 和 oathf 这两个单词怎么能保证
-        //在metric 里面被找到
+        //在matrix 里面被找到
         // 因为我忘记了一件事情， 这个trie 也就是字库，是通过当前有的word 的备选candidate 创建出来的
-        // 为不是根据metric 有什么单词，然后有什么组合 去创建出来的
+        // 为不是根据matrix 有什么单词，然后有什么组合 去创建出来的
+        //
+        //
+        // note at Jan 3 Dec 
+        // work on this program again
+        //  i found for word search 1 there is no need to use trie
+        //  when to use trie?
+        //  when I have multiple seach result and I want to find all matched words from list.
+        //  So the "end statement" no long   currentIndex == len(word), which return true, mean the word is found
+        //  but in word search 2 we use trie to keep dfs until the current element in the matrix no longer equal to the word.charAt[index]
+
         if (trie.word != null) {
             if (!result.contains(trie.word)) {
                 result.add(trie.word);

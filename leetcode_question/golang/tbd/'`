@@ -47,5 +47,16 @@
  * 
  */
 func searchMatrix(matrix [][]int, target int) bool {
-    
+	row := len(matrix)
+	col := len(matrix[0])
+	for i, j := row - 1, 0; i < row && j < col; {
+	  if matrix[i][j] == target 
+	  	return true
+	  else if matrix[i][j] < target {
+	  	j = j + 1
+	  }else{
+	  	i = i - 1
+	  }
+		
+	}
 }

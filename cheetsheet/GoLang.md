@@ -761,3 +761,23 @@ Sync errors
 1: 
  cannot use append(*finalResult, arr) (type [][]int) as type *[][]int in assignment
  Ans : don't use pointer here
+
+
+======================================
+ Slice and array 区别
+======================================
+ // array
+	var a = [5]int{1, 2, 3, 4, 5}
+	b := a
+	b[4] = 100
+	fmt.Println(a, b)
+
+	// slice
+	var s = []int{1, 2, 3, 4, 5}
+	t := s
+	t[4] = 100
+	fmt.Println(s, t)
+
+	// 这里的问题主要是 如果用make 创建 array 如果length 默认给0 那么其实是创建slice， 如果是给一个固定值，那么是创建array
+	// slice 和 array 的主要区别是，  slice 如果我去掉一个，最后的值，在添加一个值 在result 里面的arr 会通过reference 的关系，把 1，2，3，4 改成1，2，3，5
+	// 所以这里要用slice  但是在最后往result 里面添加的时候， 要用一个copy 方法，把arr 值放到一个新的array 里面去，而这个array 要通过make 加上 一个非0 length 的方式创建
