@@ -24,6 +24,32 @@
  */
 class Solution {
     public List<String> restoreIpAddresses(String s) {
-        
+        return this.search("", -1, -1, 0, s, new HashSet<String>()); 
     }
+
+    public void search(String prev, int i, int j, int p, String s, Set <String> result){
+        if (p > 4){
+            result.add(prev)
+            return 
+        }
+        if(dig(i,j) > 255){
+            return
+        }
+        String cur = prev + String.valueOf(dig) + ".";
+        for (int m = 0; m < 3, m ++){
+            search(prev, j + 1, m, p + 1, s);
+        }
+        return result;
+
+    }
+    // cover 0  this is a edge case
+   public  String dig(int i, int j, String s){
+        if (i < 0 || j < 0) return "";
+        int num = 0;
+    
+        for (; i <= j; i++){
+            nums += Math.power(10, j - i) * s.substring(i);
+        }
+        return String.valueOf(num);
+   }
 }

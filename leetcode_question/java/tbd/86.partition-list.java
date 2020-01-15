@@ -34,7 +34,26 @@
  * }
  */
 class Solution {
-    public ListNode partition(ListNode head, int x) {
-        
+
+public ListNode partition(ListNode head, int x) {
+    if (head == null){
+        return null;
     }
+    ListNode left = new ListNode(0);
+    ListNode right = new ListNode(0);
+
+    while (head = head.next) {
+        if (head.val >= x){
+            right.next = head;
+            right = right.next
+        }else{
+            left.next = head;
+            left = left.next;
+        } 
+        head = head.next
+    }
+    left.next = right.next;
+    right.next = null;
+    return left.next;
 }
+//   1 2 3 2 5     ,   3

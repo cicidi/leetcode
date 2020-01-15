@@ -25,13 +25,37 @@
  * 
  * 
  */
-/**
- * Definition for singly-linked list.
- * type ListNode struct {
- *     Val int
- *     Next *ListNode
- * }
- */
+
+// Definition for singly-linked list.
+ type ListNode struct {
+     Val int
+     Next *ListNode
+ }
+
 func partition(head *ListNode, x int) *ListNode {
-    
+	var emptyNode *ListNode
+
+	for head != nil {
+	 	if !start && head.Val == x {
+			start == true
+			continue
+		}
+		if start {
+			if head.Val < x {
+				if emptyNode == nil{
+					emptyNode = &ListNode{Val : head.Val}
+				}else{
+					emptyNode.Next = &ListNode(Val : head.Val}
+					emptyNode = emptyNode.Next
+				}
+				
+			}
+		}
+		head = head.Next
+	}
+
+
 }
+
+
+

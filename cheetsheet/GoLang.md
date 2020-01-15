@@ -781,3 +781,70 @@ Sync errors
 	// 这里的问题主要是 如果用make 创建 array 如果length 默认给0 那么其实是创建slice， 如果是给一个固定值，那么是创建array
 	// slice 和 array 的主要区别是，  slice 如果我去掉一个，最后的值，在添加一个值 在result 里面的arr 会通过reference 的关系，把 1，2，3，4 改成1，2，3，5
 	// 所以这里要用slice  但是在最后往result 里面添加的时候， 要用一个copy 方法，把arr 值放到一个新的array 里面去，而这个array 要通过make 加上 一个非0 length 的方式创建
+
+
+
+    // priority queue
+
+======================================
+func topKFrequent(nums []int, k int) []int {
+	mp := make(map[int]int)
+	for i := 0; i < len(nums); i++ {
+		if cnt, ok := mp[nums[i]]; !ok {
+			mp[nums[i]] = 1
+		} else {
+			mp[nums[i]] = cnt + 1
+		}
+	}
+
+	myNums := make(MyNums, len(mp))
+	i := 0
+	for num, count := range mp {
+		myNums[i] = MyNum{Val: num, Count: count}
+		i++
+	}
+
+	heap.Init(&myNums)
+	var res []int
+	for i := 0; i < k; i++ {
+		num := heap.Pop(&myNums).(MyNum)
+		res = append(res, num.Val)
+	}
+	return res
+}
+
+// MyNum stores its value and frequency as Count.
+type MyNum struct {
+	Val   int
+	Count int
+}
+
+type MyNums []MyNum
+
+func (n MyNums) Len() int {
+	return len(n)
+}
+
+func (n MyNums) Swap(i, j int) {
+	n[i], n[j] = n[j], n[i]
+}
+
+func (n MyNums) Less(i, j int) bool {
+	return n[i].Count >= n[j].Count
+}
+
+func (n *MyNums) Push(num interface{}) {
+	myNum := num.(MyNum)
+	*n = append(*n, myNum)
+}
+
+func (n *MyNums) Pop() interface{} {
+	tmp l= *n
+	l := len(tmp)
+	var res interface{} = tmp[l-1]
+	*n = tmp[:l-1]
+	return res
+}
+
+
+===============================
