@@ -42,7 +42,7 @@
  * ⁠   5
  * ⁠  / \
  * ⁠ 1   4
- * / \
+ *  / \
  * 3   6
  * 
  * Input: [5,1,4,null,null,3,6]
@@ -60,8 +60,21 @@
  *     TreeNode(int x) { val = x; }
  * }
  */
-class Solution {
+class ValidateBinarySearchTree{
     public boolean isValidBST(TreeNode root) {
-        
+        // use long value here
+        return valid(root, Long.MIN_VALUE, Long.MAX_VALUE);
     }
+
+    public boolean valid (TreeNode root, int min, int max){
+        if (root == null) {
+          return true;
+        }
+        if (root.val <= min || root.val >= max){
+          return false;
+
+        }   
+        return valid(root.left, min, Math.min(max,root.val)) && valid(root.right, Math.max(min,root.val), max);    
+    }
+
 }
