@@ -53,6 +53,22 @@
  */
 class Solution {
     public boolean isSymmetric(TreeNode root) {
-        
+            if (root == null) 
+                return true;
+            return isSym(root.left,root.right);
+    }
+
+    public boolean isSym(TreeNode n1, TreeNode n2){
+        if (n1 == null && n2 == null){
+            return true;
+        }
+        if (n1!= null && n2!= null){
+            if (n1.val != n2.val){
+                return false;
+            }else{
+                return n1.val == n2.val && isSym(n1.left, n2.right) && isSym(n1.right,n2.left);
+            }
+        }
+        return false;
     }
 }

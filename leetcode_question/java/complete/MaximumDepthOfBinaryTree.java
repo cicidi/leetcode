@@ -43,6 +43,13 @@
  */
 class Solution {
     public int maxDepth(TreeNode root) {
-        
+
+    }
+
+    public int dep(TreeNode root, int dep){
+        if(TreeNode == null){
+            return dep;
+        }
+        return Math.max(dep(root.left, dep + 1), dep(root.right, dep + 1));
     }
 }
