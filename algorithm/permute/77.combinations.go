@@ -31,7 +31,7 @@ d*
  *
 */
 
-package main
+package permute
 
 import "fmt"
 

@@ -1,5 +1,3 @@
-module leetcode
+module github.com/cicidi/leetcode-WIP
 
 go 1.12
-
-require github.com/stretchr/testify v1.4.0

@@ -41,7 +41,7 @@
  *
  *
  */
-package main
+package linkedlist
 
 import (
 	"fmt"

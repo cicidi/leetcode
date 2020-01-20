@@ -53,7 +53,7 @@
 			-result[1, 3]
 */
 
-package main
+package permute
 
 import "fmt"
 
@@ -61,10 +61,10 @@ func permute(nums []int) [][]int {
 	finalResult := make([][]int, 0)
 	var result = make([]int, 0)
 	var visited = make([]bool, len(nums))
-	return dfs(finalResult, result, nums, visited, 0)
+	return permute_dfs(finalResult, result, nums, visited, 0)
 }
 
-func dfs(finalResult [][]int, result []int, nums []int, visited []bool, index int) [][]int {
+func permute_dfs(finalResult [][]int, result []int, nums []int, visited []bool, index int) [][]int {
 	if index >= len(nums) {
 		//	arr := result // copy result
 		fmt.Println("before merge {}", finalResult)
@@ -80,7 +80,7 @@ func dfs(finalResult [][]int, result []int, nums []int, visited []bool, index in
 		result := append(result, nums[i])
 		visited[i] = true
 		fmt.Println("finalResult {},result{}", finalResult, result)
-		finalResult = dfs(finalResult, result, nums, visited, index+1)
+		finalResult = permute_dfs(finalResult, result, nums, visited, index+1)
 		visited[i] = false
 
 	}

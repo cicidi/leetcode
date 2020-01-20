@@ -65,7 +65,7 @@ xxxxxx
    			xxxxxxxxxxx
 				xxxxx
 */
-package main
+package interval
 
 import "fmt"
 
