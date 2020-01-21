@@ -34,22 +34,19 @@
  * Definition for singly-linked list.
  */
 
-package main
+package linkedlist
 
 import (
 	"fmt"
+	"github.com/cicidi/leetcode-WIP/algorithm/model"
 	"math"
+	_ "github.com/cicidi/leetcode-WIP/algorithm/model"
 )
 
-type ListNode struct {
-	Val  int
-	Next *ListNode
-}
-
-func deleteDuplicates(head *ListNode) *ListNode {
-	var resultNode = &ListNode{Val: math.MinInt32}
-	var prev = &ListNode{Val: math.MinInt32}
-	var ndNode *ListNode
+func deleteDuplicates82(head *model.ListNode) *model.ListNode {
+	var resultNode = &model.ListNode{Val: math.MinInt32}
+	var prev = &model.ListNode{Val: math.MinInt32}
+	var ndNode *model.ListNode
 
 	for head != nil {
 		ep := false // equal prev
@@ -63,10 +60,10 @@ func deleteDuplicates(head *ListNode) *ListNode {
 
 		if !ep && !en {
 			if ndNode == nil {
-				ndNode = &ListNode{Val: head.Val}
+				ndNode = &model.ListNode{Val: head.Val}
 				resultNode.Next = ndNode
 			} else {
-				ndNode.Next = &ListNode{Val: head.Val}
+				ndNode.Next = &model.ListNode{Val: head.Val}
 				ndNode = ndNode.Next
 			}
 		}
@@ -78,13 +75,13 @@ func deleteDuplicates(head *ListNode) *ListNode {
 }
 
 func main() {
-	node1 := &ListNode{Val: 1}
-	node2 := &ListNode{Val: 2}
-	node3 := &ListNode{Val: 3}
-	node4 := &ListNode{Val: 3}
-	node5 := &ListNode{Val: 4}
-	node6 := &ListNode{Val: 4}
-	node7 := &ListNode{Val: 5}
+	node1 := &model.ListNode{Val: 1}
+	node2 := &model.ListNode{Val: 2}
+	node3 := &model.ListNode{Val: 3}
+	node4 := &model.ListNode{Val: 3}
+	node5 := &model.ListNode{Val: 4}
+	node6 := &model.ListNode{Val: 4}
+	node7 := &model.ListNode{Val: 5}
 
 	node1.Next = node2
 	node2.Next = node3
@@ -93,7 +90,7 @@ func main() {
 	node5.Next = node6
 	node6.Next = node7
 
-	fmt.Println(deleteDuplicates(node1))
+	fmt.Println(deleteDuplicates82(node1))
 }
 
 /*

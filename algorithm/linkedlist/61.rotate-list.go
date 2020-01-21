@@ -43,20 +43,19 @@
 
 //Definition for singly-linked list.
 
-package main
+package linkedlist
 
-import "fmt"
+import (
+	"fmt"
+	"github.com/cicidi/leetcode-WIP/algorithm/model"
+)
+import _ "github.com/cicidi/leetcode-WIP/algorithm/model"
 
-type ListNode struct {
-	Val  int
-	Next *ListNode
-}
-
-func rotateRight(head *ListNode, k int) *ListNode {
+func rotateRight_2(head *model.ListNode, k int) *model.ListNode {
 	var l int
 	copyN := head
-	tmpHead := ListNode{0, head}
-	var last *ListNode
+	tmpHead := model.ListNode{0, head}
+	var last *model.ListNode
 	for head != nil {
 		last = head
 		head = head.Next
@@ -78,9 +77,9 @@ func rotateRight(head *ListNode, k int) *ListNode {
 }
 
 func main() {
-	n3 := ListNode{3, nil}
-	n2 := ListNode{2, &n3}
-	n1 := ListNode{1, &n2}
+	n3 := model.ListNode{3, nil}
+	n2 := model.ListNode{2, &n3}
+	n1 := model.ListNode{1, &n2}
 	node := rotateRight(&n1, 1)
 	fmt.Println(node)
 	fmt.Println(node.Next)

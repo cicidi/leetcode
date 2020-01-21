@@ -27,7 +27,7 @@
  *
  *
  */
-package main
+package matrix
 
 import "math"
 
@@ -50,7 +50,7 @@ func generateMatrix(n int) [][]int {
 			num++
 		}
 		ce--
-		for row := re, col := ce;
+		for row, col :=re, ce;
 		col > cs;
 		col--, num++
 		{

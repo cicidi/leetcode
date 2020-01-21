@@ -46,7 +46,7 @@
  * Output: false
  *
  */
-package main
+package matrix
 
 import (
 	"fmt"

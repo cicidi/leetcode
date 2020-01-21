@@ -48,11 +48,11 @@
  * 
  * Output: [2,1,4,null,null,3]
  * 
- * ⁠ 2
+ * ⁠ 3
  * ⁠/ \
- * 1   4
- * /
- * ⁠ 3
+ * 2   4
+ * /    
+ *1 ⁠ 
  * 
  * 
  * Follow up:
@@ -74,6 +74,8 @@
  */
 class Solution {
     public void recoverTree(TreeNode root) {
-        
+        // i think for this question either 2 or 3  as root should both be fine.
+        //  since the struct not change, sill 3 levels.
+        //  but if the tree has 4 levels how to we keep the same structure.
     }
 }

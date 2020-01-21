@@ -37,7 +37,7 @@
  *
  *
  */
-package main
+package matrix
 
 import "fmt"
 

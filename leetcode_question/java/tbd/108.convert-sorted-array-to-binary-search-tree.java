@@ -47,4 +47,9 @@ class Solution {
     public TreeNode sortedArrayToBST(int[] nums) {
         
     }
+
+    public create(TreeNode root, int i, int j){
+        int mid = (j - i) % 2 == 1 ? i + (j - i)/2:i + 1+ (j - i)/2 
+    
+    }
 }

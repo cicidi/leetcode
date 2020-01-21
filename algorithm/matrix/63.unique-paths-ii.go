@@ -49,7 +49,7 @@
  * [1,1,2]
  */
 
-package main
+package matrix
 
 import "fmt"
 

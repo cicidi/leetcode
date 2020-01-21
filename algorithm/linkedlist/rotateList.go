@@ -1,8 +1,8 @@
-package main
+package linkedlist
 
 import (
 	"fmt"
-	"leetcode/algorithm/model"
+	"github.com/cicidi/leetcode-WIP/algorithm/model"
 )
 
 /*
@@ -66,7 +66,7 @@ func rotateRight(head *model.ListNode, k int) *model.ListNode {
 
 	var moveNode = dummy.Next
 	for i := 0; i < size-k-1; i++ {
-		moveNode = moveNode.Nex
+		moveNode = moveNode.Next
 	}
 	result := moveNode.Next
 	moveNode.Next = nil
