@@ -72,4 +72,56 @@ public class SearchRange {
             return result;
         }
     }
+
+    public int[] searchRangeSolution2(int[] nums, int target) {
+        int[] result = new int[2];
+        result[0] = findLeft(nums, target);
+        result[1] = findRight(nums, target);
+        return result;
+    }
+
+    //    5, 7,7,8,8,10
+    //    8 8 10 11 12
+    public int findLeft(int[] nums, int target){
+        int index = -1;
+        int left = 0;
+        int right = nums.length - 1;
+        while(left <= right) {
+            int mid = left + (right - left) / 2;
+            if (nums[mid] < target){
+                left = mid + 1;
+            }else if (nums[mid] == target){
+                 right = mid - 1;
+            }else{ // nums[mid] > target
+                right = mid - 1;
+            }
+            if (nums[mid] == target){
+                  index = mid;
+            }
+        }
+
+        return index;
+    }
+    //    7,7,8,8,10
+    //    8 8 10 11 12
+    public int findRight(int[] nums, int target){
+        int index = -1;
+        int left = 0;
+        int right = nums.length - 1;
+        while(left <= right) {
+            int mid = left + (right - left) / 2;
+            if (nums[mid] < target){
+                left = mid + 1;
+            }else if (nums[mid] == target){
+                 left = mid + 1;
+            }else{ // nums[mid] > target
+                right = mid - 1;
+            }
+            if (nums[mid] == target){
+                  index = mid;
+            }
+        }
+
+        return index;
+    }
 }
