@@ -68,7 +68,7 @@ public class SearchInRotatedSortedArray_JZ_Recurrsion {
 
     public static void main(String[] args) {
         int[] nums = new int[]{4, 5, 6, 7, 0, 1, 2};
-        int target = 9;
+        int target = 0;
         SearchInRotatedSortedArray_JZ_Recurrsion q33 = new SearchInRotatedSortedArray_JZ_Recurrsion();
         System.out.println(q33.search(nums, target));
     }

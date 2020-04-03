@@ -56,9 +56,9 @@ public class TextJustify {
                     int spaceCount = L - curLen;
                     int spaceSlots = i - lastI - 1;
                     if (spaceSlots == 0 || i == wordsCount) {
-                        //当这一行只有一个单词的时候 或者i 已经到了最后就差收尾了
+                        //notice 当这一行只有一个单词的时候 或者i 已经到了最后就差收尾了
                         for (int j = lastI; j < i; j++) {
-                            // 因为这个是append 到i之前，所以前面wordcount 要loop 到word count
+                            //notice 因为这个是append 到i之前，所以前面wordcount 要loop 到word count
                             buf.append(words[j]);
                             if (j != i - 1)
                                 appendSpace(buf, 1);  //如果不是每一行最后一个单词， 就一直要加在单词中间加上空格

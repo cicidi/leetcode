@@ -38,7 +38,12 @@
  * 2. 1 step + 2 steps
  * 3. 2 steps + 1 step
  *
- *
+*  1
+*  2
+*  1 1 1
+*   Step [n - 1] + 1
+*	Step [n - 2] + 2
+*   solution[n - 1] + solution[n - 2]
  */
 package main
 

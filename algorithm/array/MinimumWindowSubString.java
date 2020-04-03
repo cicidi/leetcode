@@ -7,8 +7,43 @@ package array;
  * url
  * leetcode
  *
+    Given a string S and a string T, find the minimum window in S which will contain all the characters in T in complexity O(n).
+    
+    Example:
+    
+    Input: S = "ADOBECODEBANC", T = "ABC"
+    Output: "BANC"
+    Note:
+    
+    If there is no such window in S that covers all characters in T, return the empty string "".
+    If there is such window, you are guaranteed that there will always be only one unique minimum window in S.
  * 分析
+ * ADOBECODEBANC
+ * ^    ^
+ *    ^ ^^^^^^
+ *      ^^^^^^
+ *      ^^^^^^^^
+ *          ^^^^
+ * 
+ *
+ *
  * */
+
+/*
+ *left      right  matchCount
+   0        0         1
+            1           
+            .         .  
+            .         .
+            5         3  
+
+
+ * */
+
+
+
+
+
 
 import java.util.HashMap;
 import java.util.Map;
@@ -16,9 +51,6 @@ import java.util.Map;
 public class MinimumWindowSubString {
 
     public static void main(String[] args) {
-//        String[] input = new String[]{
-//                "wrt", "wrf", "er", "ett", "rftt"
-//        };
         String s = "ADOBECODEBANC";
         String t = "ABC";
         Solution soultion = new Solution();
@@ -32,10 +64,12 @@ public class MinimumWindowSubString {
             }
 
             Map<Character, Integer> wordDict = this.convertToMap(t);
-            int left = 0, minLen = Integer.MAX_VALUE, matchCount = 0, ansLeft = 0;  // important 一开始 minLen = max
+            // important 一开始 minLen = max
+            int left = 0, minLen = Integer.MAX_VALUE, matchCount = 0, ansLeft = 0;  
             for (int right = 0; right < s.length(); right++) {
                 char ch = s.charAt(right);
-                if (wordDict.containsKey(ch)) {   // notice 先看当前char 是否是t 里面的， 因为是move fast ，所以如果不是T里面的，可以直接skip 掉了
+  // notice 先看当前char 是否是t 里面的， 因为是move fast ，所以如果不是T里面的，可以直接skip 掉了
+                if (wordDict.containsKey(ch)) {    
                     int count = wordDict.get(ch);
                     count --; // notice count 因为已经找到了一个，所以 还需要找的数量就 -1
                     wordDict.put(ch, count);
@@ -77,6 +111,45 @@ public class MinimumWindowSubString {
             }
             return map;
         }
+
+        public string minLength(String word, String s){
+            int left = 0;
+            int min = Integer.MAX_VALUE;
+            int right = word.length() - 1;
+            Map<Character, Interger> map = convertToMap(word);
+            // convert s to map  here   A  = 1  B = 1 C = 1;
+            int matchCount = 0;
+            int lastLeftIndex;
+            for (int right = 0; i < word.length(); right++){
+                char c = word.charAt(i);
+                if (map.contains(c)){
+                    int count = map.get(c);
+                    count --;
+                    map.put(c,count);
+                    if (count == 0){
+                       matchCount ++;
+                    }
+                    while(matchCount == map.size()){
+                        if (right - left + 1 < min){
+                            min = right - left + 1;
+                            lastLeftIndex = left;
+                        }
+                        char leftC = word.charAt(left);
+                        if (map.contains(leftC)){
+                            count = map.get(leftC);
+                            count ++;
+                            if (count == 1){
+                                matchCount --;
+                            }
+                            map.put(leftC, count);
+                            left ++;
+                        }
+                    }    
+                 }
+            }
+            return min = Integer.MAX_VALUE ? "": s.substring(lastLeftIndex + min - 1);
+        }
+        
     }
 }
 

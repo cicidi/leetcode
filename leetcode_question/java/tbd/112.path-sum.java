@@ -44,6 +44,26 @@
  */
 class Solution {
     public boolean hasPathSum(TreeNode root, int sum) {
-        
+       return dfs(root, sum); 
+    }
+    // wrong solution
+    public static boolean dfs(TreeNode root, int diff){
+     if (root == null){
+        if (diff == 0){
+             return true;
+        }else{
+            return false;
+        }
+     }else{
+        int diff = diff - root.value
+        if (diff < 0) {
+            return false;
+        }else{
+            //notice  这个做法有一个问题，就是没有考虑到 有可能一个node 只有一个left 和一个right，
+            // 但是这个时候如果刚好又传了一个diff = 0，就构成了 null + 0 的组合
+            return dfs(root.left, diff) || dfs(root.right, diff); 
+       }
+
+     }
     }
 }

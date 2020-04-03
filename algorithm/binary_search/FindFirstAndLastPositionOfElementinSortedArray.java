@@ -37,26 +37,48 @@ public class FindFirstAndLastPositionOfElementinSortedArray {
     public int[] search(int start, int end, int[] nums, int target, int max, int min) {
 
         int mid = (start + end) / 2;
+//        if (start < mid && nums[start] <= target && nums[end] >= target) {
         if (start < mid) {
             int[] a = search(start, mid, nums, target, max, min);
             int[] b = search(mid, end, nums, target, max, min);
-            min = a[0];
-            max = b[1];
+            System.out.println("a0 " + a[0]);
+            min = Math.min(min, a[0]);
+            max = Math.max(max, b[1]);
+            System.out.println("start < mid " + "max " + max + " min " + min);
+
         }
         if (nums[start] == target) {
             max = Math.max(start, max);
-            min = Math.min(min, start);
+            min = Math.min(start, min);
+            System.out.println("start = target " + " max " + max + " min " + min);
         }
         if (nums[mid] == target) {
-            max = Math.max(mid, max);
+            max = Math.max(max, mid);
             min = Math.min(min, mid);
+            System.out.println("mid  = target " + " max " + max + " min " + min);
         }
         if (nums[end] == target) {
-            max = Math.max(end, max);
+            max = Math.max(max, end);
             min = Math.min(min, end);
+            System.out.println("end = target " + ": max " + max + " min " + min);
         }
 
         int[] result = {min, max};
+        System.out.println(" result " + result[0] + " " + result[1] + " start " + start + " end " + end);
         return result;
     }
+
+    public static void main(String[] args) {
+        FindFirstAndLastPositionOfElementinSortedArray f = new FindFirstAndLastPositionOfElementinSortedArray();
+        int[] arr = new int[]{5, 7, 7, 8, 8, 10};
+//        int[] arr = new int[]{1, 8, 8};
+        int[] result = f.searchRange(arr, 8);
+        System.out.println(result[0] + " " + result[1]);
+    }
 }
+
+/*
+ [5,7,7,8,8,10]
+
+
+*/

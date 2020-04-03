@@ -63,9 +63,15 @@ import "fmt"
 func sortColors(nums []int) {
 	lastNZ := 0
 	firstNT := len(nums) - 1
+	// start from last, check if the element is 0
+	// 		if yes
+	//  		switch with leftCursor
+	//			and if there is any more `2`s , move the right cursor
+	// 			and if there is any more `0`s , more the left cursor
+	//   			when finish move all left and right cursor
+	// 					restart from the `rightCursor` cursor , which is the moving cursor
 	for i := 0; i <= firstNT; i++ {
 		tmp := nums[i]
-		//  fmt.Println("lastNZ ", lastNZ, " firstNT ", firstNT)
 		if tmp == 0 {
 			change(lastNZ, i, nums)
 			for nums[firstNT] == 2 {

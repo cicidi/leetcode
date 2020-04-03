@@ -51,7 +51,7 @@ func lengthOfLastWord(s string) int {
 				result = 1
 				reset = false
 			} else {
-				result += 1
+				result++
 			}
 		}
 	}
