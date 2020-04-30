@@ -29,9 +29,16 @@ Therefore, return 3 as the starting index.*
  * 4. your ...
  * 5. your tank = 5 - 2 = 3 
  *                3 + 1 - 3 = 1
- *                 1 + 2 - 4  no  falied
- *                 
+ *                1 + 2 - 4  no  falied
+ * important 起始这道题又一个关键的点 -> 第一个array 的 总数 - 第二个array 的总数必须要大于0，
+ *  不然肯定不可能
+ * notice 第二件事情，就是从每一个index， 计算可否走到下一步
+ *  然后最后一个 可以从current 走到最后的index 就是最终结果，尽管我还不知道怎么证明这个
+ * important 猜想， 假设一个index ， 这个index 之前的所有方式都不可能性，而total 又大于 第二个array 的total
+ *  那么说明这个index 之后一定有一个index 是可以的， 而既然index 这个值可定比后面的sum 更有可能， 因为这个
+ * index 还是帮tank里多添油了呢
  * */
+
 
 public class GasStation {
 
