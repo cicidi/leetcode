@@ -34,6 +34,16 @@
  *
  */
 
+/*
+ analysis
+
+ first we need to sort the interval by the `start`
+ second, we need to check if the 2 ajacent interval has intersection.  how to? 这个地方每次自己想一遍  since it is sort, so  compare interval1.end with interval2.start
+ third, if intersect then end = max , and dont add to result
+ fortth, if  not overlap , then add to result
+ fifty , dont miss the last one
+*/
+
 package main
 
 import (
