@@ -31,6 +31,12 @@ Explanation: Rob house 1 (money = 2), rob house 3 (money = 9) and rob house 5 (m
              Total amount you can rob = 2 + 9 + 1 = 12.
  * */
 
+/*
+ * When to use dp 
+ *  it seems decision or result on picking each house is depends on the solution of others
+ *dp[i] = Math.max(dp[i + 1], nums[i] + dp[i + 2]) 
+ * but since we dont know dp [i + 2] we need to change dp as an array to helper() and in the helper we reassign the value to dp arr[], that is why init all value to -1 by default; 
+ * */
 
 class HouseRobber {
 
@@ -41,8 +47,12 @@ class HouseRobber {
     }
 
     int[] dp;
+    
+    public int rob(int[] nums){
+        this.solution1(nums);
+    }
 
-    public int rob(int[] nums) {
+    public int solution1(int[] nums) {
         init(nums.length);
         return this.helper(nums, 0);
     }
