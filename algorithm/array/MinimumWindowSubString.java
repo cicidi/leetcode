@@ -37,7 +37,14 @@ package array;
             .         .
             5         3  
 
-
+=============================================
+04/30/2020 
+1. Need a map to know how many occurance of each character in the target. for example in this case target = "ABC" then the map [A = 1, B = 1, C = 1]
+2. Need a match count to know if all the character has been found in the subString 
+3. Need a answerLeft index, Whenever matchCounter is 0, and the current lenght is less then minLen, then set answerLeft = currentLeft(left)
+4. Need a currentLeft pointer and a right pointer. 
+5. When match Counter is 0 , then need to move left to right, 
+    if the occuance of the left character change from 0 to 1. Then it means  matchCount should minus 1
  * */
 
 
