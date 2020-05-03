@@ -48,11 +48,7 @@ class HouseRobber {
 
     int[] dp;
     
-    public int rob(int[] nums){
-        this.solution1(nums);
-    }
-
-    public int solution1(int[] nums) {
+    public int rob (int[] nums) {
         init(nums.length);
         return this.helper(nums, 0);
     }

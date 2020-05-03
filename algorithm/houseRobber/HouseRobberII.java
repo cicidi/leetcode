@@ -89,6 +89,39 @@ class HourseRobberII {
         return result;
     }
 
+    public int helper2(int[] nums, int i, boolean pickFirst){
+        if (i > nums.length || nums.length == 0){
+            return 0;
+        }
+
+        if(dp[i] != -1){
+            return dp[i];
+        }
+        int result = 0;
+        
+        if (i == nums.length - 2){
+            if (pickFirst){
+                return nums[i - 2];
+            }else{
+                return Math.max(nums[i - 2], dp[nums.length - 1]);
+            }
+        }else if(i == nums.length - 1){
+            if(pickFirst){
+               result = 0; 
+            }else{
+               result = nums[nums.length - 1];
+            }
+        }else if (i == 0){
+            int pfResult = Math.max(nums[i] + helper2(nums, i + 2, true), helper2(nums, i + 1, true));
+            int noPfResult = Math.max(helper2(nums, i + 2, false), helper2(nums, i + 1, false));
+            result = Math.max(pfResult, noPfResult);
+        }else{
+            result = Math.max(nums[i] + helper2(nums, i + 2, pickFirst), helper2(nums, i + 1, pickFirst));
+        }
+        dp[i] = result;
+        return dp[i];
+    }
+
     public void init(int length) {
         dp = new int[length];
         for (int i = 0; i < dp.length; i++) {
