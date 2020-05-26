@@ -36,7 +36,9 @@ package array;
             .         .  
             .         .
             5         3  
-
+================  review ====================
+* May 27 2020
+*
 =============================================
 04/30/2020 
 1. Need a map to know how many occurance of each character in the target. for example in this case target = "ABC" then the map [A = 1, B = 1, C = 1]
