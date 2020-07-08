@@ -5,10 +5,10 @@ package matrix;
  */
 
 /*
-  * tag
-  * lintcode 161. Rotate Image
-  * https://www.lintcode.com/problem/alien-dictionary/description
-  */
+ * tag
+ * lintcode 161. Rotate Image
+ * https://www.lintcode.com/problem/alien-dictionary/description
+ */
 public class RotateImage {
     /**
      * @param matrix: a lists of integers

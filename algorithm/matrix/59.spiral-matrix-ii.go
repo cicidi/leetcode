@@ -45,23 +45,17 @@ func generateMatrix(n int) [][]int {
 		}
 		rs++
 
-		for row := rs; row < rs; row++{
+		for row := rs; row < rs; row++ {
 			result[row][ce] = num
 			num++
 		}
 		ce--
-		for row, col :=re, ce;
-		col > cs;
-		col--, num++
-		{
+		for row, col := re, ce; col > cs; col, num = col-1, num-1 {
 			result[row][col] = num;
 		}
 		re--
 
-		for row := re, col := cs;
-		row > rs;
-		row--, num++
-		{
+		for row, col := re, cs; row > rs; row, num = row-1, num-1 {
 			result[row][col] = num;
 		}
 		rs++

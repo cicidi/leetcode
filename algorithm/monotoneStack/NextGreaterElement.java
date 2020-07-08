@@ -11,19 +11,19 @@
  * Total Submissions: 234.6K
  * Testcase Example:  '[4,1,2]\n[1,3,4,2]'
  *
- * 
+ *
  * You are given two arrays (without duplicates) nums1 and nums2 where nums1’s
  * elements are subset of nums2. Find all the next greater numbers for nums1's
- * elements in the corresponding places of nums2. 
- * 
- * 
- * 
+ * elements in the corresponding places of nums2.
+ *
+ *
+ *
  * The Next Greater Number of a number x in nums1 is the first greater number
  * to its right in nums2. If it does not exist, output -1 for this number.
- * 
- * 
+ *
+ *
  * Example 1:
- * 
+ *
  * Input: nums1 = [4,1,2], nums2 = [1,3,4,2].
  * Output: [-1,3,-1]
  * Explanation:
@@ -33,11 +33,11 @@
  * second array is 3.
  * ⁠   For number 2 in the first array, there is no next greater number for it
  * in the second array, so output -1.
- * 
- * 
- * 
+ *
+ *
+ *
  * Example 2:
- * 
+ *
  * Input: nums1 = [2,4], nums2 = [1,2,3,4].
  * Output: [3,-1]
  * Explanation:
@@ -45,16 +45,16 @@
  * second array is 3.
  * ⁠   For number 4 in the first array, there is no next greater number for it
  * in the second array, so output -1.
- * 
- * 
- * 
- * 
+ *
+ *
+ *
+ *
  * Note:
- * 
+ *
  * All elements in nums1 and nums2 are unique.
  * The length of both nums1 and nums2 would not exceed 1000.
- * 
- * 
+ *
+ *
  */
 
 package monotoneStack;
@@ -62,12 +62,37 @@ package monotoneStack;
 import java.util.*;
 
 
-class NextGreaterElement{
+class NextGreaterElement {
+    // 3,4,2,1,5
+    public int[] nextGreaterElement(int[] nums1, int[] nums2) {
+        Map<Integer, Integer> map = new HashMap<>();
+        Stack<Integer> stack = new Stack<>();
+        for (int num : nums2) { // 可以直接保存val,而不是index
+
+            // So to get the nextGreaterElement, actually we are creating a monotone decrease stack, which the next value
+            // element is less than previous one, and if a  new element is large then the stack.peek, we will take
+            // the stack.peek, and use a hashmap store the nextGreaterElement.
+            while (!stack.isEmpty() && stack.peek() < num) {
+                map.put(stack.pop(), num);
+            }
+            stack.add(num);
+        }
+
+        for (int i = 0; i < nums1.length; i++) {
+            int e = nums1[i];
+            nums1[i] = map.getOrDefault(e, -1);// 优化：这里的result 可以直接用nums1
+        }
+        return nums1;
+    }
+}
+
+// =============================================================================
+
 /* wrong solution TOTALLY  没有考虑到一个值 可是多个数字的下一个最大值这种情况
   public int[] nextGreaterElement(int[] nums1, int[] nums2) {
        Map<Integer, Integer> map = new HashMap<>();
        for(int i = 0; i < nums1.length; i++){
-          map.put(nums1[i],i);
+          map.put(nums1[i],;
        }
        int[] result = new int[nums1.length]; 
        for(int i = 0; i < result.length; i++){
@@ -109,33 +134,3 @@ class NextGreaterElement{
     }
 */
 
-// 3,4,2,1,5
-   public int[] nextGreaterElement(int[] nums1, int[] nums2) {
-       Map<Integer, Integer> map = new HashMap<>();
-       Stack<Integer> stack = new Stack<>();
-       for(int num : nums2){// 可以直接保存val,而不是index
-         while(!stack.isEmpty() && stack.peek() < num){
-            map.put(stack.pop(),num);
-         }
-         stack.add(num);
-       }
-       
-       for(int i = 0; i < nums1.length; i++){
-          int e = nums1[i];
-          nums1[i] = map.getOrDefault(e, -1);// 优化：这里的result 可以直接用nums1
-       }
-       return nums1;
-    }
-    public static void main(String[] args){
-      int[] input1 = new int[]{4,1,2};
-      int[] input2 = new int[]{1,3,4,2};
-      
-      NextGreaterElement nge = new NextGreaterElement();
-      System.out.println(Arrays.toString(nge.nextGreaterElement(input1, input2)));
-
-      input1 = new int[]{3,1,5,7,9,2,6};
-      input2 = new int[]{1,2,3,5,6,7,9,11};
-      System.out.println(Arrays.toString(nge.nextGreaterElement(input1, input2)));
-    }
-    
-}
