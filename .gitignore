@@ -11,6 +11,7 @@
 **/.idea/**
 **/*.iml
 **/*.log
+**/*.class
 **/*.data
 **/*.redo
 **/logs/**
@@ -19,6 +20,7 @@
 **/out/**
 
 algorithm/tmp/*
-leetcode_question/811.subdomain-visit-count.txt
-"\351\235\242\347\273\217/"
 
+### Java ###
+# Compiled class file
+*.class
