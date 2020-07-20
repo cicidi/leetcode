@@ -10,12 +10,12 @@ package matrix;
  * https://www.lintcode.com/problem/search-a-2d-matrix-ii/description
  */
 /*
-* Step1
-* 1. 这道题是search 某个target 所以直接从左下就可以了
-* 2. 另外这个是求出现次数，所得有一个while loop 一直进行下去
-* 2. 前面又一个KthSmallestNumberInSortedMatrix 这个就需要priority Q 了
-* 3. 回头这道题，从左下开始找
-* */
+ * Step1
+ * 1. 这道题是search 某个target 所以直接从左下就可以了
+ * 2. 另外这个是求出现次数，所得有一个while loop 一直进行下去
+ * 2. 前面又一个KthSmallestNumberInSortedMatrix 这个就需要priority Q 了
+ * 3. 回头这道题，从左下开始找
+ * */
 public class SearchA2DMatrixII {
     /**
      * @param matrix: A list of lists of integers

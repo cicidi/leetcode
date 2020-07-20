@@ -4,9 +4,8 @@ import java.util.List;
 import java.util.PriorityQueue;
 
 /**
- * @author cicidi on 5/26/19
- * Lintcode 919. Meeting Rooms
- * url https://www.lintcode.com/problem/meeting-rooms-ii/my-submissions
+ * @author cicidi on 5/26/19 Lintcode 919. Meeting Rooms url
+ * https://www.lintcode.com/problem/meeting-rooms-ii/my-submissions
  */
 public class MeetingRoomsII {
     /**
@@ -15,13 +14,12 @@ public class MeetingRoomsII {
      */
     public int minMeetingRooms(List<Interval> intervals) {
         // Write your code here
-        PriorityQueue<Pair> queue = new PriorityQueue<Pair>((x, y) -> {
-            if (x.time == y.time)
-                return x.count - y.count;
-            else
-                return x.time - y.time;
-        }
-        );
+        PriorityQueue<Pair> queue =
+                new PriorityQueue<Pair>(
+                        (x, y) -> {
+                            if (x.time == y.time) return x.count - y.count;
+                            else return x.time - y.time;
+                        });
         for (Interval interval : intervals) {
             int start = interval.start;
             int end = interval.end;

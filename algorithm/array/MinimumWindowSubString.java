@@ -36,13 +36,18 @@ package array;
             .         .  
             .         .
             5         3  
-
-
+================  review ====================
+* May 27 2020
+*
+=============================================
+04/30/2020 
+1. Need a map to know how many occurance of each character in the target. for example in this case target = "ABC" then the map [A = 1, B = 1, C = 1]
+2. Need a match count to know if all the character has been found in the subString 
+3. Need a answerLeft index, Whenever matchCounter is 0, and the current lenght is less then minLen, then set answerLeft = currentLeft(left)
+4. Need a currentLeft pointer and a right pointer. 
+5. When match Counter is 0 , then need to move left to right, 
+    if the occuance of the left character change from 0 to 1. Then it means  matchCount should minus 1
  * */
-
-
-
-
 
 
 import java.util.HashMap;
@@ -65,13 +70,13 @@ public class MinimumWindowSubString {
 
             Map<Character, Integer> wordDict = this.convertToMap(t);
             // important 一开始 minLen = max
-            int left = 0, minLen = Integer.MAX_VALUE, matchCount = 0, ansLeft = 0;  
+            int left = 0, minLen = Integer.MAX_VALUE, matchCount = 0, ansLeft = 0;
             for (int right = 0; right < s.length(); right++) {
                 char ch = s.charAt(right);
-  // notice 先看当前char 是否是t 里面的， 因为是move fast ，所以如果不是T里面的，可以直接skip 掉了
-                if (wordDict.containsKey(ch)) {    
+                // notice 先看当前char 是否是t 里面的， 因为是move fast ，所以如果不是T里面的，可以直接skip 掉了
+                if (wordDict.containsKey(ch)) {
                     int count = wordDict.get(ch);
-                    count --; // notice count 因为已经找到了一个，所以 还需要找的数量就 -1
+                    count--; // notice count 因为已经找到了一个，所以 还需要找的数量就 -1
                     wordDict.put(ch, count);
                     // notice 如果 当前count == 0 就说明 这个一个char 已经完全match完毕了
                     if (count == 0) {
@@ -111,45 +116,6 @@ public class MinimumWindowSubString {
             }
             return map;
         }
-
-        public string minLength(String word, String s){
-            int left = 0;
-            int min = Integer.MAX_VALUE;
-            int right = word.length() - 1;
-            Map<Character, Interger> map = convertToMap(word);
-            // convert s to map  here   A  = 1  B = 1 C = 1;
-            int matchCount = 0;
-            int lastLeftIndex;
-            for (int right = 0; i < word.length(); right++){
-                char c = word.charAt(i);
-                if (map.contains(c)){
-                    int count = map.get(c);
-                    count --;
-                    map.put(c,count);
-                    if (count == 0){
-                       matchCount ++;
-                    }
-                    while(matchCount == map.size()){
-                        if (right - left + 1 < min){
-                            min = right - left + 1;
-                            lastLeftIndex = left;
-                        }
-                        char leftC = word.charAt(left);
-                        if (map.contains(leftC)){
-                            count = map.get(leftC);
-                            count ++;
-                            if (count == 1){
-                                matchCount --;
-                            }
-                            map.put(leftC, count);
-                            left ++;
-                        }
-                    }    
-                 }
-            }
-            return min = Integer.MAX_VALUE ? "": s.substring(lastLeftIndex + min - 1);
-        }
-        
     }
 }
 

@@ -46,8 +46,8 @@ public class TextJustify {
             int curLen = 0;
             int lastI = 0;
             for (int i = 0; i <= wordsCount; i++) {
-                int spaceSzie = i - lastI;
-                if (i == wordsCount || curLen + words[i].length() + spaceSzie > L) {
+                int spaceSize= i - lastI;
+                if (i == wordsCount || curLen + words[i].length() + spaceSize > L) {
                     //notice 判断单行是否允许再放一个单词
                     //notice 当总长度小于L 时候，走71行的if
                     //notice 直到满足大于L的时候 才进入这个大的if
