@@ -51,12 +51,17 @@ uuid, url, domain, content, lastModified_time
 Content clean up after a period of time
 
 ##Follow up
+- data storage
 - concurrent download
 - de-duplicate
 - ip-blocked
 - how to know crawling finish (no sub url)
 - how to split work if half machine is faster than others  (job are picked by machine itself, so does'nt matter of machine speed) 
 - Split job by location
+- circle dependency.
+- performance enhancement
+  - download from closest server. becasue on server and target IP region. How to build a distributed system.
+  
 
 
 ##Reference
